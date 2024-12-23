@@ -1,0 +1,39 @@
+ div.dataTables_filter {
+     text-align: right;
+     margin-bottom: 10px;
+ }
+
+ div.dataTables_filter input {
+    width: 200px;
+     padding: 5px 10px;
+     border: 1px solid #d1d5db;
+     border-radius: 5px;
+     font-size: 14px;
+     outline: none;
+     transition: box-shadow 0.2s ease-in-out;
+ }
+
+ div.dataTables_filter input:focus {
+     box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+ }
+
+ .dataTables_length select {
+     padding-right: 5px;
+     width: 60px;
+     -webkit-appearance: none;
+     -moz-appearance: none;
+     appearance: none;
+ }
+
+ .dataTables_length {
+     position: relative;
+ }
+
+ .dataTables_length::after {
+     position: absolute;
+     right: 55px;
+     top: 50%;
+     transform: translateY(-50%);
+     pointer-events: none;
+     color: #333;
+ }
