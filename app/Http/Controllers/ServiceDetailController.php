@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\service;
+use App\Models\booking;
 use Illuminate\Http\Request;
 
 class ServiceDetailController extends Controller

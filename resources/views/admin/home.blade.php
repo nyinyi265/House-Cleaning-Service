@@ -15,7 +15,7 @@
 
     <!-- Scripts -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
-
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
         hr {
             height: 15px;
@@ -104,43 +104,124 @@
                 </div>
             </div>
         </div>
-
-        <div class="w-full h-[65%] mx-[3%] mt-[3%] px-4">
-            <div class="w-full h-full bg-slate-400 rounded-lg border-2 border-black p-4"></div>
-        </div>
     </section>
 
-    <!-- <section class="flex flex-col w-[90%] h-[400px] mx-auto my-[5%]">
-        <h1 class="text-3xl font-bold text-center">Quick Actions</h1>
-        <div class="flex flex-wrap w-full h-full mx-auto mt-[3%] px-[1%] justify-center">
-            <div class="flex flex-col w-[30%] h-[50%] p-4 border-2 border-[#001F3F] rounded-lg mr-[2%] mb-[5%] shadow-[5px_5px_15px_#B9E5E8]">
-                <h1 class="text-lg font-bold">Booking Management</h1>
-            </div>
-
-            <div class="flex w-[30%] h-[50%] p-4 border-2 border-[#001F3F] rounded-lg mr-[2%] mb-[5%] shadow-[5px_5px_15px_#B9E5E8]">
-
-            </div>
-
-            <div class="flex w-[30%] h-[50%] p-4 border-2 border-[#001F3F] rounded-lg mb-[5%] shadow-[5px_5px_15px_#B9E5E8]">
-
-            </div>
-
-            <div class="flex w-[30%] h-[50%] p-4 border-2 border-[#001F3F] rounded-lg mr-[2%] shadow-[5px_5px_15px_#B9E5E8]">
-                <a href="/admin/orders" class="quick-action bg-green-100 hover:bg-green-200 p-4 rounded-lg text-center">
-                    <i class="fas fa-shopping-cart text-green-500 text-3xl"></i>
-                    <p class="mt-2 text-green-700">Manage Orders</p>
-                </a>
-            </div>
-
-            <div class="flex w-[30%] h-[50%] p-4 border-2 border-[#001F3F] rounded-lg mr-[2%] shadow-[5px_5px_15px_#B9E5E8]">
-                <a href="/admin/users" class="bg-blue-100 shadow-md hover:shadow-lg rounded-lg p-6 flex flex-col items-center transition duration-300">
-                    <i class="fas fa-users text-blue-500 text-4xl mb-4"></i>
-                    <h3 class="text-lg font-semibold text-gray-700">Manage Users</h3>
-                </a>
-            </div>
+    <!-- <section class="w-full h-[600px] items-center mt-[5%] px-4">
+        <div>
+            <canvas id="barChart"></canvas>
         </div>
-    </section>
-    <script src="https://kit.fontawesome.com/your-kit-code.js" crossorigin="anonymous"></script> -->
+    </section> -->
 </body>
+<!-- <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        const ctx = document.getElementById('barChart').getContext('2d');
+
+        const chartData = {
+            customers: {
+                {
+                    $customer
+                }
+            },
+            revenue: {
+                {
+                    $revenue
+                }
+            },
+            finishedBookings: {
+                {
+                    $booking - > where('status', 'finished') - > count()
+                }
+            },
+            scheduledBookings: {
+                {
+                    $booking - > where('status', 'scheduled') - > count()
+                }
+            },
+            pendingBookings: {
+                {
+                    $booking - > where('status', 'pending') - > count()
+                }
+            },
+            activeEmployees: {
+                {
+                    $employee
+                }
+            }
+        };
+
+        console.log(chartData);
+
+        // Bar chart data
+        const data = {
+            labels: ['Revenue', 'Customers', 'Finished Bookings', 'Scheduled Bookings', 'Pending Bookings', 'Active Employees'],
+            datasets: [{
+                label: 'Dashboard Stats',
+                data: [
+                    chartData.customers,
+                    chartData.revenue,
+                    chartData.finishedBookings,
+                    chartData.scheduledBookings,
+                    chartData.pendingBookings,
+                    chartData.activeEmployees
+                ],
+                backgroundColor: [
+                    'rgba(75, 192, 192, 0.2)',
+                    'rgba(54, 162, 235, 0.2)',
+                    'rgba(255, 206, 86, 0.2)',
+                    'rgba(153, 102, 255, 0.2)',
+                    'rgba(255, 159, 64, 0.2)',
+                    'rgba(201, 203, 207, 0.2)'
+                ],
+                borderColor: [
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(54, 162, 235, 1)',
+                    'rgba(255, 206, 86, 1)',
+                    'rgba(153, 102, 255, 1)',
+                    'rgba(255, 159, 64, 1)',
+                    'rgba(201, 203, 207, 1)'
+                ],
+                borderWidth: 1
+            }]
+        };
+
+        // Chart options
+        const options = {
+            responsive: true,
+            plugins: {
+                legend: {
+                    display: true,
+                    position: 'top'
+                },
+                tooltip: {
+                    enabled: true
+                },
+                datalabels: {
+                    anchor: 'end',
+                    align: 'top',
+                    formatter: function(value) {
+                        return value; // Display the exact value on top of the bar
+                    },
+                    font: {
+                        size: 12
+                    }
+                }
+            },
+            scales: {
+                y: {
+                    beginAtZero: true,
+                },
+            },
+        };
+
+        // Render the bar chart
+        new Chart(ctx, {
+            type: 'bar',
+            data: data,
+            options: options,
+            plugins: [ChartDataLabels] // Enable the datalabels plugin
+        });
+    });
+</script> -->
+
 
 </html>

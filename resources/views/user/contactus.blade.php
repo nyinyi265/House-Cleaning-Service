@@ -49,7 +49,7 @@
                 <input type="email" name="email" id="email" placeholder="{{auth()->user()->email}}" disabled class="w-full border-1 border-black rounded-lg px-4 mt-[1%] mb-[3%]">
 
                 <label for="phone" class="text-lg">Phone Number (Optional)</label>
-                <input type="text" name="phone" id="phone" placeholder="{{auth()->user()->phone}}" class="w-full border-1 border-black rounded-lg px-4 mt-[1%] mb-[3%]">
+                <input type="text" name="phone" id="phone" placeholder="{{auth()->user()->phone}}" disabled class="w-full border-1 border-black rounded-lg px-4 mt-[1%] mb-[3%]">
 
                 <label for="question" class="text-lg">Inquery Type</label>
                 <select name="questions" id="questions" rows="5" class="w-full border-1 border-black rounded-lg px-4 mt-[1%] mb-[3%]">

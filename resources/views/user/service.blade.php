@@ -15,10 +15,63 @@
 
     <!-- Scripts -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
+    <style>
+        #payment-success-modal {
+            animation: fadeIn 0.5s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
 </head>
 
 <body>
     @include('layouts.navigation')
+
+    @if (session('success'))
+    <div id="booking-popup" class="fixed inset-0 bg-blue-100 bg-opacity-50 flex items-center justify-center z-50">
+        <div class="bg-white rounded-lg shadow-lg p-8 max-w-md w-full text-center">
+            <!-- Icon -->
+            <div class="flex justify-center mb-6">
+                <div class="bg-green-100 text-green-600 rounded-full p-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-7 7a1 1 0 01-1.414 0l-3-3a1 1 0 111.414-1.414L9 11.586l6.293-6.293a1 1 0 011.414 0z" clip-rule="evenodd" />
+                    </svg>
+                </div>
+            </div>
+
+            <!-- Title -->
+            <h2 class="text-2xl font-bold text-gray-800 mb-4">Your booking was successfully processed!</h2>
+
+            <!-- Description -->
+            <p class="text-gray-600 mb-6">
+                Thank you for booking our house cleaning service! We will review your request and confirm the details with you within 24 hours. An email with your booking confirmation will be sent shortly.
+            </p>
+
+            <!-- Details -->
+            @if (session('success') && session('booking'))
+            <div class="bg-gray-100 p-4 rounded-lg mb-6">
+                <p class="text-gray-700 font-medium">{{session('booking')['service']}}</p>
+                <p class="text-gray-500 text-sm">{{session('booking')['date']}}</p>
+                <p class="text-gray-700 font-bold text-lg">{{session('booking')['price']}}</p>
+            </div>
+            @endif
+
+            <a href="{{route('service')}}"  class="bg-blue-600 text-white py-2 px-6 rounded-lg shadow hover:bg-blue-700 transition">Return Back</a>
+        </div>
+    </div>
+
+    <div class="fixed top-[50%] right-[50%] bg-green-500 text-white px-4 py-3 rounded shadow-lg transition-opacity duration-300 opacity-100">
+        {{ session('success') }}
+    </div>
+    @endif
 
     <section class="relative w-full h-[600px] bg-slate-400">
         <div class="slider-img absolute top-0 left-0 w-full h-full">
@@ -75,6 +128,11 @@
     @include('layouts.footer')
 
     <script>
+        function goback() {
+            const popup = document.getElementById('booking-popup');
+            popup.style.display = 'none';
+        }
+
         function fetchServices(categoryId) {
             console.log('Service Categories: ', categoryId);
             fetch(`/service/${categoryId}`)

@@ -20,25 +20,30 @@
 <body>
     @include('layouts.navigation')
 
-    <section class="w-[80%] h-[500px] mx-auto my-[5%]">
+    <section class="w-[55%] mx-auto my-[5%] border-2 border-gray-300 p-5 rounded-lg">
         <form action="{{route('book.store', ['id' => $services->id])}}" method="POST">
-            @csrf
-            <div>
-                <img src="{{asset($services->service_image)}}" alt="" width="200px" height="200px">
-                <h1>{{$services->service_name}}</h1>
-                <p>{{$services->description}}</p>
-                <p>{{$services->cost}}</p>
-            </div>
 
-            <label>Please Choose a Date</label>
-            <input type="date" name="book_date" id="book_date" required>
+            @csrf
             <input type="hidden" name="serviceid" id="serviceid" value="{{$services->id}}">
 
-            <button type="submit">Book</button>
+            <div class="flex">
+                <img src="{{asset($services->service_image)}}" alt="" width="150px" height="auto" class="rounded-s-lg">
+                <div class="flex flex-col ml-5 gap-5">
+                    <h1 class="text-xl font-bold">{{$services->service_name}}</h1>
+                    <p><strong>Description: </strong>: {{$services->description}}</p>
+                    <p><strong>Price</strong> {{$services->cost}}</p>
+                    <div class="">
+                        <label><strong>Please Choose a Date: </strong></label>
+                        <input type="date" name="book_date" id="book_date" required />
+                    </div>
+                    <button type="submit" class="text-white text-center font-bold bg-blue-600 hover:bg-blue-300 hover:text-black py-2 px-4 rounded-lg">Book</button>
+                </div>
+            </div>
         </form>
-
-        
     </section>
+
+    @include('layouts.footer')
+
 </body>
 
 </html>

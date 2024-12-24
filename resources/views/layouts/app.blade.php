@@ -170,7 +170,7 @@
                 <div class="w-[50%] p-5 text-black text-center">
                     <h1 class="text-2xl text-black font-bold mt-[3%]">Why Partner with Us for Your Cleaning Needs?</h1>
                     <p class="text-black text-justify px-[8%] mt-[2%]">
-                        At [Your Business Name], we don’t just clean homes — we create healthier and happier environments. Our professional housekeeping services are designed to save you time, reduce stress, and provide unmatched convenience, all while ensuring your living spaces are immaculate. Here are the key benefits of choosing us for your housekeeping needs: </p>
+                        At Crystal Clear, we don’t just clean homes — we create healthier and happier environments. Our professional housekeeping services are designed to save you time, reduce stress, and provide unmatched convenience, all while ensuring your living spaces are immaculate. Here are the key benefits of choosing us for your housekeeping needs: </p>
                     <p>
                     <ul>
                         <li class="text-black text-justify px-[8%] mt-[2%]">Healthier Home: We eliminate dust, allergens, and bacteria, creating a safer, cleaner space for you and your family</li>
