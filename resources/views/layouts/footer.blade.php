@@ -86,7 +86,7 @@
                 </div>
             </div>
 
-            <div class="flex w-full h-[50%] p-2 items-center justify-start ml-[15%] -mt-[22%]">
+            <div class="flex w-full h-[50%] p-2 items-center justify-start ml-[15%] -mt-[20%]">
                 <div class="w-[14%] h-[77%] rounded-full mx-3">
                     <a href="">
                         <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="blue" class="bi bi-facebook" viewBox="0 0 16 16">

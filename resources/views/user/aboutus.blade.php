@@ -30,7 +30,7 @@
     <section class="h-[400px] relative slider-container mb-[5%]">
         <!-- Background Image -->
         <div class="slider-img absolute top-0 left-0 w-full h-full bg-slate-200">
-            <!-- <img src="{{asset('img/Window Cleaning.jpg')}}" alt="" class="relative w-full h-full object-cover blur-sm"> -->
+            <img src="{{asset('img/Window Cleaning.jpg')}}" alt="" class="relative w-full h-full object-cover">
         </div>
 
         <!-- Content Section (Text and Button) -->

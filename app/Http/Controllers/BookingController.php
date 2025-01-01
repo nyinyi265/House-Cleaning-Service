@@ -27,4 +27,17 @@ class BookingController extends Controller
 
         return redirect()->route('service')->with(['success' => 'Thank You for Booking Our Service', 'booking' => ['date' => $booking->date, 'service' => $booking->service->service_name, 'price' => $booking->service->cost]]); 
     }
+
+    public function bookingHistory(){
+        $bookings = booking::with('employees')->where('u_id', Auth::id())->get();
+        return view('user.bookingHistory', ['bookings' => $bookings]);
+    }
+
+    public function cancelBooking($id){
+        $booking = booking::findOrFail($id);
+        $booking->status = 'cancelled';
+        $booking->save();
+        $bookings = booking::with('employees')->where('u_id', Auth::id())->get();
+        return view('user.bookinghistory', ['bookings' => $bookings])->with('cancel', 'Your Booking has been Cancelled');
+    }
 }

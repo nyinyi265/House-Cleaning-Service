@@ -20,6 +20,35 @@
 <body class="">
     @include('layouts.navigation')
 
+    @if (session('feedback'))
+    <div id="feedback-popup" class="fixed inset-0 bg-blue-100 bg-opacity-50 flex items-center justify-center z-50">
+        <div class="flex flex-col bg-white p-6 rounded-lg shadow-lg items-center">
+            <h2 class="text-lg font-bold text-green-600">Feedback</h2>
+            <p class="text-gray-700">{{ session('feedback') }}</p>
+            <button id="close-feedback" class="font-semibold mt-4 px-4 py-2 bg-green-400 text-neutral-700 rounded hover:bg-green-600 hover:text-white">
+                Close
+            </button>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const feedbackPopup = document.getElementById('feedback-popup');
+            const closeButton = document.getElementById('close-feedback');
+
+            // Auto-hide the popup after 5 seconds
+            setTimeout(() => {
+                feedbackPopup.style.display = 'none';
+            }, 5000);
+
+            // Close the popup manually
+            closeButton.addEventListener('click', () => {
+                feedbackPopup.style.display = 'none';
+            });
+        });
+    </script>
+    @endif
+
 
     <section class="h-[400px] relative slider-container mb-[5%]">
         <!-- Background Image -->
@@ -43,13 +72,13 @@
                 @csrf
 
                 <label for="name" class="text-lg">Full Name</label>
-                <input type="text" name="fullname" id="fullname" placeholder="{{auth()->user()->name}}" disabled class="w-full border-1 border-black rounded-lg px-4 mt-[1%] mb-[3%]">
+                <input type="text" name="fullname" id="fullname" placeholder="@if (Auth::check()) {{Auth::user()->name}} @else Guest @endif" disabled class="w-full border-1 border-black rounded-lg px-4 mt-[1%] mb-[3%]">
 
                 <label for="email" class="text-lg">Email Address</label>
-                <input type="email" name="email" id="email" placeholder="{{auth()->user()->email}}" disabled class="w-full border-1 border-black rounded-lg px-4 mt-[1%] mb-[3%]">
+                <input type="email" name="email" id="email" placeholder="@if (Auth::check()) {{Auth::user()->email}} @else guest@gmail.com @endif" disabled class="w-full border-1 border-black rounded-lg px-4 mt-[1%] mb-[3%]">
 
                 <label for="phone" class="text-lg">Phone Number (Optional)</label>
-                <input type="text" name="phone" id="phone" placeholder="{{auth()->user()->phone}}" disabled class="w-full border-1 border-black rounded-lg px-4 mt-[1%] mb-[3%]">
+                <input type="text" name="phone" id="phone" placeholder="@if (Auth::check()) {{Auth::user()->phone}} @else +959761369539 @endif" disabled class="w-full border-1 border-black rounded-lg px-4 mt-[1%] mb-[3%]">
 
                 <label for="question" class="text-lg">Inquery Type</label>
                 <select name="questions" id="questions" rows="5" class="w-full border-1 border-black rounded-lg px-4 mt-[1%] mb-[3%]">
@@ -62,7 +91,7 @@
                 <label for="message" class="text-lg">Message</label>
                 <textarea name="message" id="message" placeholder="How can we help you?" class="w-full border-1 border-black rounded-lg px-4 mt-[1%] mb-[3%]"></textarea>
 
-                <button class="w-full text-center text-white bg-black p-4 rounded-lg mt-[3%] cursor-pointer">Send Message</button>
+                <button class="w-full text-xl text-center text-white font-bold bg-blue-700 p-4 rounded-lg mt-[3%] cursor-pointer">Send Message</button>
             </form>
         </div>
 

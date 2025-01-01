@@ -26,7 +26,7 @@ class ContactController extends Controller
             'inquery_type' => $validated['questions']
         ]);
 
-        return redirect()->route('contactus');
+        return redirect()->route('contactus')->with('feedback', 'Thank You for Your Feedback!');
     }
 
     public function displayFeedback(){

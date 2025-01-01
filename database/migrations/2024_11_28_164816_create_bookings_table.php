@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('bookings', function (Blueprint $table) {
             $table->id();
             $table->date('date');
-            $table->enum('status', ['pending', 'finished', 'scheduled'])->default('pending');
+            $table->enum('status', ['pending', 'finished', 'scheduled', 'cancelled'])->default('pending');
             $table->unsignedBigInteger('u_id');
             $table->unsignedBigInteger('service_id');
             $table->foreign('u_id')->references('id')->on('users')->onDelete('cascade')->onUpdate('cascade');

@@ -63,7 +63,7 @@
         object-fit: cover;
         width: 100%;
         height: 100%;
-        filter: blur(5px);
+        /* filter: blur(5px); */
         /* Apply blur effect */
     }
 
@@ -90,7 +90,7 @@
         <section class="h-[700px] relative slider-container">
             <!-- Background Image -->
             <div class="slider-img absolute top-0 left-0 w-full h-full">
-                <img src="{{asset('img/slider.jpg')}}" alt="" class="relative w-full h-full object-cover blur-sm">
+                <img src="{{asset('img/slider.jpg')}}" alt="" class="relative w-full h-full">
             </div>
 
             <!-- Content Section (Text and Button) -->
@@ -106,17 +106,7 @@
                     </button>
                 </form>
             </div>
-
-            <!-- Slider Content Section -->
-            <!-- <div class="absolute top-[15%] left-[25%] w-[350px] h-[400px]">
-                <div class="slider">
-                    <div class="slide bg-gray-500 rounded-lg">First Slide</div>
-                    <div class="slide bg-blue-500 rounded-lg">Second Slide</div>
-                    <div class="slide bg-red-500 rounded-lg">Third Slide</div>
-                    <div class="slide bg-green-500 rounded-lg">Fourth Slide</div>
-                    <div class="slide bg-yellow-500 rounded-lg">Fifth Slide</div>
-                </div>
-            </div> -->
+            
         </section>
     </x-slot>
 </x-app-layout>
