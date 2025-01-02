@@ -163,7 +163,7 @@
                     <div class="relative">
                         <img src="{{asset('img/benefit.jpg')}}" alt="" class="w-full h-full blur-sm rounded-xl opacity-70">
                     </div>
-                    <div class="absolute z-10 -mt-[27%] ml-[5%]">
+                    <div class="absolute z-10 -mt-[440px] ml-[50px]">
                         <img src="{{asset('img/benefit.jpg')}}" alt="Benefit.jpg" class="rounded-xl">
                     </div>
                 </div>
