@@ -137,15 +137,13 @@
                         <form method="POST" action="@if(Auth::check() && Auth::user())
                             {{ route('logout') }}
                             @else
-                            {{ route('login') }}
+                            {{ route('register') }}
                             @endif">
                             @csrf
 
                             @if(Auth::check() && Auth::user())
-                            <x-dropdown-link :href="route('logout')"
-                                onclick="event.preventDefault();
-                                                this.closest('form').submit();">
-                                {{ __('Log Out') }}
+                            <x-dropdown-link :href="route('register')"
+                                Register
                             </x-dropdown-link>
                             @else
                             <x-dropdown-link :href="route('login')">
