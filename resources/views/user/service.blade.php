@@ -64,7 +64,7 @@
             </div>
             @endif
 
-            <a href="{{route('service')}}"  class="bg-blue-600 text-white py-2 px-6 rounded-lg shadow hover:bg-blue-700 transition">Return Back</a>
+            <a href="{{route('service')}}" class="bg-blue-600 text-white py-2 px-6 rounded-lg shadow hover:bg-blue-700 transition">Return Back</a>
         </div>
     </div>
 
@@ -90,7 +90,7 @@
     </section>
 
     <section class="flex w-full rounded-lg p-8 mx-auto">
-        <div class="flex flex-col w-[30%] h-full bg-slate-100 py-10 px-4">
+        <div class="flex flex-col w-[30%] h-full bg-slate-100 py-10 px-4 sticky top-0">
             <h1 class="mb-4 text-2xl font-bold">Choose A Categories</h1>
             @foreach ($categories as $category)
             <button onclick="fetchServices('{{ $category->id }}')" class="mb-4 bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-500">
@@ -102,11 +102,11 @@
         <div id="service-list" class="w-[70%] p-4 rounded-lg">
             @foreach ($services as $service)
             <div class="flex service-item p-4 mb-4 border-2 border-gray-300 rounded-lg">
-                <img src="{{asset( $service->service_image)}}" alt="" width="100px" height="100px" class="mr-8 rounded-s-lg">
+                <img src="{{asset( $service->service_image)}}" alt="" width="200px" class="mr-8 rounded-s-lg">
                 <div class="flex flex-col gap-3">
                     <h1 class="text-lg font-semibold">{{$service->service_name}}</h1>
-                    <h1><strong>Description:</strong>{{Str::limit($service->description, 150, '...')}}</h1>
-                    <h1><strong>Price:</strong> {{$service->cost}}</h1>
+                    <h1><strong>Description: </strong>{{Str::limit($service->description, 150, '...')}}</h1>
+                    <h1><strong>Price: </strong> {{$service->cost}} ¥</h1>
                     <a href="{{route('service-details', ['id' => $service->id]) }}" class="w-[120px] text-center mt-2 bg-blue-500 text-white py-1 px-3 rounded hover:bg-blue-400">
                         See Details
                     </a>
@@ -131,19 +131,25 @@
                 .then(response => response.json()) // Fix missing parentheses
                 .then(data => {
                     const serviceList = document.getElementById('service-list');
-                    serviceList.innerHTML = ''; // Clear the existing services
+                    serviceList.innerHTML = ''; 
+
+                    function truncateText (text, limit){
+                        return text.length >limit ? text.substring(0, limit) + '...' : text;
+                    }
 
                     // Loop through the services and generate HTML
                     data.forEach(service => {
                         const serviceItem = `
-                        <div class="service-item p-4 mb-4 border-b border-gray-300">
-                            <img src="${service.img_url}"  width="50px" height="50px">
-                            <h3 class="text-xl font-semibold">${service.service_name}</h3>
-                            <p class="text-gray-700">${service.description}</p>
-                            <p class="text-gray-700">${service.cost}</p>
-                            <a href="/service/details/${service.id}" class="mt-2 bg-blue-500 text-white py-1 px-3 rounded hover:bg-blue-400">
-                                See Details
-                            </a>
+                        <div class="flex service-item p-4 mb-4 border-2 border-gray-300 rounded-lg">
+                            <img src="${service.img_url}" alt="" width="200px" class="mr-8 rounded-s-lg">
+                            <div class="flex flex-col gap-3">
+                                <h1 class="text-lg font-semibold">${service.service_name}</h1>
+                                <h1><strong>Description: </strong>${truncateText(service.description, 150)}</h1>
+                                <h1><strong>Price: </strong>${service.cost} ¥</h1>
+                                <a href="/service/details/${service.id}" class="w-[120px] text-center mt-2 bg-blue-500 text-white py-1 px-3 rounded hover:bg-blue-400">
+                                    See Details
+                                </a>
+                            </div>
                         </div>
                     `;
 
