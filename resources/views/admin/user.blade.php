@@ -32,7 +32,44 @@
 <body>
     @include('admin.layouts.navigation')
 
-    <section class="w-[90%] p-10 mx-auto mt-[4%] rounded-lg">
+    @if (Auth::user()->email == 'yoonme26@gmail.com')
+    <section class="w-[50%] p-10 border-2 border-slate-400 mx-auto mt-[4%] rounded-lg">
+        <form action="{{route('admin-user-store')}}" method="POST" class="flex flex-col">
+            @csrf
+
+            <div class="flex flex-col gap-3">
+                <label for="user-name">Admin Name</label>
+                <input type="text" name="admin-name" id="admin-name" class="px-4 rounded-lg" required>
+            </div>
+
+            <div class="flex flex-col gap-3">
+                <label for="user-email">Admin Email</label>
+                <input type="email" name="admin-email" id="admin-email" class="px-4 rounded-lg" required>
+            </div>
+
+            <div class="flex flex-col gap-3">
+                <label for="user-password">Admin Password</label>
+                <input type="password" name="admin-password" id="admin-password" class="px-4 rounded-lg" required>
+            </div>
+
+            <div class="flex flex-col gap-3">
+                <label for="phone-number">Phone Number</label>
+                <input type="text" name="phone-number" id="phone-number" class="px-4 rounded-lg" required>
+            </div>
+
+            <div class="flex flex-col gap-3">
+                <label for="user-address">Admin Address</label>
+                <input type="text" name="admin-address" id="admin-address" class="px-4 rounded-lg" required>
+            </div>
+
+            <div class="flex flex-col gap-3">
+                <button type="submit"  class="border-2 border-slate-400 mt-[3%] py-2 rounded-lg">Add Admin</button>
+            </div>
+        </form>
+    </section>
+    @endif
+
+    <section class="w-[95%] p-10 mx-auto mt-[4%] rounded-lg">
         <table id="table" class="w-[80%] table-auto border-2 border-gray-400 mt-[5%] mx-auto">
             <thead class="text-xs text-gray-100 uppercase bg-gray-50 dark:bg-gray-700">
                 <tr class="border-2 border-white">

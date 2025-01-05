@@ -75,21 +75,24 @@
                 </select>
             </div>
 
-            <div class="flex w-full gap-3 mt-[3%]">
-                <label class="w-[22%]">Select Equipments</label>
-                <div class="">
-                    <select name="category" id="category" onchange="filterEquipment()" required>
-                        <option value="all">All</option>
-                        <option value="tools">Tools</option>
-                        <option value="machines">Machines</option>
-                        <option value="chemicals">Chemicals</option>
-                        <option value="personal protective equipments">Personal Protection Equipments</option>
-                        <option value="cleaning supplies">Cleaning Supplies</option>
-                    </select>
+            <div class="flex mt-[3%]">
+                <div class="flex flex-col w-[50%] gap-3">
+                    <label class="">Select Equipments</label>
+                    <div class="">
+                        <select name="category" id="category" onchange="filterEquipment()" required>
+                            <option value="all">All</option>
+                            <option value="tools">Tools</option>
+                            <option value="machines">Machines</option>
+                            <option value="chemicals">Chemicals</option>
+                            <option value="personal protective equipments">Personal Protection Equipments</option>
+                            <option value="cleaning supplies">Cleaning Supplies</option>
+                            <option value="materials">Materials</option>
+                        </select>
+                    </div>
                 </div>
-                <div class="">
+                <div class="w-[50%] mt-[30px]">
                     @foreach ($equipments as $item)
-                    <div class="equipment-items" data-category="{{strtolower($item->equipment_category)}}">
+                    <div class="equipment-items" data-category="{{strtolower($item->equipment_category)}}" class="w-full">
                         <input type="checkbox" name="equipments[]" value="{{ $item->id }}"
                             @if (isset($serviceEdit) && in_array($item->id, $serviceEdit->needEquipmentForServices->pluck('id')->toArray()))
                         checked

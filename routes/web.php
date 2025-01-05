@@ -86,6 +86,7 @@ Route::middleware(['auth', 'admin'])->group(function () {
     Route::get('/admin-feedback', [ContactController::class, 'displayFeedback'])->name('admin-feedback');
 
     Route::get('/admin-user', [AdminController::class, 'displayUser'])->name('admin-user');
+    Route::post('/admin-user', [AdminController::class, 'storeAdmin'])->name('admin-user-store');
 });
 
 Route::middleware('auth')->group(function () {});

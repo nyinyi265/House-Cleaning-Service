@@ -238,9 +238,33 @@ class EquipmentSeeder extends Seeder
                 'condition_status' => 'good'
             ],
             [
-                'equipment_name' => 'Pressure washer	',
+                'equipment_name' => 'Protective gear',
+                'maintenance_date' => Carbon::create('2024', '06', '18'),
+                'equipment_category' => 'tools',
+                'condition_status' => 'good'
+            ],
+            [
+                'equipment_name' => 'floor buffers',
                 'maintenance_date' => Carbon::create('2024', '06', '18'),
                 'equipment_category' => 'machines',
+                'condition_status' => 'good'
+            ],
+            [
+                'equipment_name' => 'Pressure washer',
+                'maintenance_date' => Carbon::create('2024', '07', '15'),
+                'equipment_category' => 'machines',
+                'condition_status' => 'good'
+            ],
+            [
+                'equipment_name' => 'Waste disposal containers',
+                'maintenance_date' => Carbon::create('2024', '07', '25'),
+                'equipment_category' => 'cleaning supplies',
+                'condition_status' => 'good'
+            ],
+            [
+                'equipment_name' => 'Labeling materials',
+                'maintenance_date' => Carbon::create('2024', '06', '18'),
+                'equipment_category' => 'materials',
                 'condition_status' => 'good'
             ],
             [
@@ -277,6 +301,18 @@ class EquipmentSeeder extends Seeder
                 'equipment_name' => 'Industrial fans',
                 'maintenance_date' => Carbon::create('2024', '04', '15'),
                 'equipment_category' => 'machines',
+                'condition_status' => 'good'
+            ],
+            [
+                'equipment_name' => 'Heavy-duty vacuums',
+                'maintenance_date' => Carbon::create('2024', '05', '31'),
+                'equipment_category' => 'machines',
+                'condition_status' => 'good'
+            ],
+            [
+                'equipment_name' => 'industrial cleaning chemicals',
+                'maintenance_date' => Carbon::create('2024', '05', '31'),
+                'equipment_category' => 'chemicals',
                 'condition_status' => 'good'
             ],
             [

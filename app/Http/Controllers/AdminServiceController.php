@@ -57,7 +57,7 @@ class AdminServiceController extends Controller
 
             $service = service::create([
                 'service_name' => $validated['service-name'],
-                'description' => $request->input('service-description'),
+                'description' => $validated['service-description'],
                 'cost' => $validated['service-cost'],
                 'service_image' => 'uploads/' . $imgName,
                 'category_id' => $validated['service-category'],
