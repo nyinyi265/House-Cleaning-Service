@@ -50,16 +50,16 @@
     @endif
 
 
-    <section class="h-[400px] relative slider-container mb-[5%]">
+    <section class="h-[500px] relative slider-container mb-[5%]">
         <!-- Background Image -->
         <div class="slider-img absolute top-0 left-0 w-full h-full bg-slate-200">
-            <img src="{{asset('img/Window Cleaning.jpg')}}" alt="" class="relative w-full h-full object-cover blur-sm">
+            <img src="{{asset('img/image.png')}}" alt="" class="relative w-full h-full object-cover">
         </div>
 
         <!-- Content Section (Text and Button) -->
         <div class="absolute top-[50%] left-[50%] transform -translate-x-[50%] -translate-y-1/2 bg-black bg-opacity-40 p-5 rounded-md z-10">
             <h1 class="text-white text-4xl font-bold text-center">Contact Us</h1>
-            <h3 class="text-white text-2xl mt-2">“We’re here to help! Reach out to us for inquiries, bookings, or feedback.”</h3>
+            <h3 class="text-white text-2xl text-center mt-2">“We’re here to help! Reach out to us for inquiries, bookings, or feedback.”</h3>
         </div>
     </section>
 

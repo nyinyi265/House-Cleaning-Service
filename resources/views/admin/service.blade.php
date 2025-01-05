@@ -60,7 +60,7 @@
 
             <div class="flex flex-col gap-3">
                 <label for="service-image">Select an Image</label>
-                <input type="file" name="service-image" id="service-image" class="border-2 border-slate-400 px-4 py-2 rounded-lg">
+                <input type="file" name="service-image" id="service-image" class="border-2 border-slate-400 px-4 py-2 rounded-lg" required>
                 @if (isset($serviceEdit) && $serviceEdit->service_image)
                 <img src="{{asset($serviceEdit->service_image)}}" alt="" width="50px" height="50px">
                 @endif
@@ -76,16 +76,18 @@
             </div>
 
             <div class="flex w-full gap-3 mt-[3%]">
-                <label class="w-[30%]">Select Equipments</label>
-                <div class="w-[25%]">
+                <label class="w-[22%]">Select Equipments</label>
+                <div class="">
                     <select name="category" id="category" onchange="filterEquipment()" required>
                         <option value="all">All</option>
                         <option value="tools">Tools</option>
                         <option value="machines">Machines</option>
                         <option value="chemicals">Chemicals</option>
+                        <option value="personal protective equipments">Personal Protection Equipments</option>
+                        <option value="cleaning supplies">Cleaning Supplies</option>
                     </select>
                 </div>
-                <div class="w-[35%]">
+                <div class="">
                     @foreach ($equipments as $item)
                     <div class="equipment-items" data-category="{{strtolower($item->equipment_category)}}">
                         <input type="checkbox" name="equipments[]" value="{{ $item->id }}"

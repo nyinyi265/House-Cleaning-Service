@@ -82,8 +82,20 @@ class EquipmentSeeder extends Seeder
                 'condition_status' => 'good'
             ],
             [
+                'equipment_name' => 'Scrubbing pads',
+                'maintenance_date' => Carbon::create('2024', '02', '26'),
+                'equipment_category' => 'cleaning supplise',
+                'condition_status' => 'good'
+            ],
+            [
                 'equipment_name' => 'Stain-removal tools',
                 'maintenance_date' => Carbon::create('2024', '10', '02'),
+                'equipment_category' => 'tools',
+                'condition_status' => 'good'
+            ],
+            [
+                'equipment_name' => 'Scraper',
+                'maintenance_date' => Carbon::create('2024', '10', '04'),
                 'equipment_category' => 'tools',
                 'condition_status' => 'good'
             ],
@@ -148,9 +160,15 @@ class EquipmentSeeder extends Seeder
                 'condition_status' => 'good'
             ],
             [
-                'equipment_name' => 'Grout brush',
-                'maintenance_date' => Carbon::create('2024', '05', '17'),
+                'equipment_name' => 'Grooming Tools',
+                'maintenance_date' => Carbon::create('2024', '05', '09'),
                 'equipment_category' => 'tools',
+                'condition_status' => 'good'
+            ],
+            [
+                'equipment_name' => 'Pet hair vacuum',
+                'maintenance_date' => Carbon::create('2024', '05', '12'),
+                'equipment_category' => 'machines',
                 'condition_status' => 'good'
             ],
             [
@@ -180,19 +198,55 @@ class EquipmentSeeder extends Seeder
             [
                 'equipment_name' => 'Biohazard disposal bags',
                 'maintenance_date' => Carbon::create('2024', '11', '21'),
-                'equipment_category' => 'tools',
+                'equipment_category' => 'personal protective equipments',
+                'condition_status' => 'good'
+            ],
+            [
+                'equipment_name' => 'Safety equipment',
+                'maintenance_date' => Carbon::create('2024', '11', '16'),
+                'equipment_category' => 'personal protective equipments',
                 'condition_status' => 'good'
             ],
             [
                 'equipment_name' => 'Protective clothing',
                 'maintenance_date' => Carbon::create('2024', '07', '27'),
+                'equipment_category' => 'personal protective equipments',
+                'condition_status' => 'good'
+            ],
+            [
+                'equipment_name' => 'Gloves',
+                'maintenance_date' => Carbon::create('2024', '07', '20'),
+                'equipment_category' => 'personal protective equipments',
+                'condition_status' => 'good'
+            ],
+            [
+                'equipment_name' => 'Soft Brushes',
+                'maintenance_date' => Carbon::create('2024', '07', '20'),
                 'equipment_category' => 'tools',
+                'condition_status' => 'good'
+            ],
+            [
+                'equipment_name' => 'Cleaning detergents',
+                'maintenance_date' => Carbon::create('2024', '07', '27'),
+                'equipment_category' => 'cleaning supplies',
                 'condition_status' => 'good'
             ],
             [
                 'equipment_name' => 'Mold cleaning solutions',
                 'maintenance_date' => Carbon::create('2024', '06', '18'),
-                'equipment_category' => 'chemicals',
+                'equipment_category' => 'cleaning supplies',
+                'condition_status' => 'good'
+            ],
+            [
+                'equipment_name' => 'Pressure washer	',
+                'maintenance_date' => Carbon::create('2024', '06', '18'),
+                'equipment_category' => 'machines',
+                'condition_status' => 'good'
+            ],
+            [
+                'equipment_name' => 'Dolly',
+                'maintenance_date' => Carbon::create('2024', '06', '18'),
+                'equipment_category' => 'tools',
                 'condition_status' => 'good'
             ],
             [
@@ -202,15 +256,87 @@ class EquipmentSeeder extends Seeder
                 'condition_status' => 'good'
             ],
             [
+                'equipment_name' => 'Furniture Sliders',
+                'maintenance_date' => Carbon::create('2024', '04', '15'),
+                'equipment_category' => 'tools',
+                'condition_status' => 'good'
+            ],
+            [
+                'equipment_name' => 'Dehumidifiers',
+                'maintenance_date' => Carbon::create('2024', '04', '25'),
+                'equipment_category' => 'machines',
+                'condition_status' => 'good'
+            ],
+            [
+                'equipment_name' => 'Packing Tape',
+                'maintenance_date' => Carbon::create('2024', '04', '15'),
+                'equipment_category' => 'tools',
+                'condition_status' => 'good'
+            ],
+            [
+                'equipment_name' => 'Industrial fans',
+                'maintenance_date' => Carbon::create('2024', '04', '15'),
+                'equipment_category' => 'machines',
+                'condition_status' => 'good'
+            ],
+            [
+                'equipment_name' => 'Dusters',
+                'maintenance_date' => Carbon::create('2024', '04', '15'),
+                'equipment_category' => 'tools',
+                'condition_status' => 'good'
+            ],
+            [
+                'equipment_name' => 'Toilet Cleaner',
+                'maintenance_date' => Carbon::create('2024', '04', '20'),
+                'equipment_category' => 'machines',
+                'condition_status' => 'good'
+            ],
+            [
+                'equipment_name' => 'Dusting tools',
+                'maintenance_date' => Carbon::create('2024', '04', '30'),
+                'equipment_category' => 'tools',
+                'condition_status' => 'good'
+            ],
+            [
+                'equipment_name' => 'Sponges',
+                'maintenance_date' => Carbon::create('2024', '05', '18'),
+                'equipment_category' => 'personal protective equipments',
+                'condition_status' => 'good'
+            ],
+            [
                 'equipment_name' => 'Compressed air systems',
                 'maintenance_date' => Carbon::create('2024', '02', '14'),
                 'equipment_category' => 'machines',
                 'condition_status' => 'good'
             ],
             [
+                'equipment_name' => 'Moisture meters',
+                'maintenance_date' => Carbon::create('2024', '02', '23'),
+                'equipment_category' => 'machines',
+                'condition_status' => 'good'
+            ],
+            [
+                'equipment_name' => 'Trash bags',
+                'maintenance_date' => Carbon::create('2024', '02', '14'),
+                'equipment_category' => 'cleaning supplies',
+                'condition_status' => 'good'
+            ],
+            [
                 'equipment_name' => 'Disinfectant sprays',
                 'maintenance_date' => Carbon::create('2024', '12', '01'),
                 'equipment_category' => 'chemicals',
+                'condition_status' => 'good'
+            ],
+            [
+                'equipment_name' => 'Grout brush',
+                'maintenance_date' => Carbon::create('2024', '12', '06'),
+                'equipment_category' => 'tools',
+                'condition_status' => 'good'
+            ],
+            [
+                'equipment_name' => 'Lint Roller',
+                'maintenance_date' => Carbon::create('2024', '12', '06'),
+                'equipment_category' => 'tools',
                 'condition_status' => 'good'
             ],
             [
@@ -224,7 +350,19 @@ class EquipmentSeeder extends Seeder
                 'maintenance_date' => Carbon::create('2024', '08', '12'),
                 'equipment_category' => 'chemicals',
                 'condition_status' => 'good'
-            ]
+            ],
+            [
+                'equipment_name' => 'Air Blower',
+                'maintenance_date' => Carbon::create('2024', '07', '10'),
+                'equipment_category' => 'machines',
+                'condition_status' => 'good'
+            ],
+            [
+                'equipment_name' => 'Rake',
+                'maintenance_date' => Carbon::create('2024', '04', '13'),
+                'equipment_category' => 'tools',
+                'condition_status' => 'good'
+            ],
         ]);
     }   
 }

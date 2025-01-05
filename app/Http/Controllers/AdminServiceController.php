@@ -44,9 +44,9 @@ class AdminServiceController extends Controller
             'service-description' => ['required', 'string'],
             'service-cost' => ['required', 'numeric'],
             'service-category' => ['required', 'string'],
-            // 'service-image' => ['required', 'nullable'],
+            'service-image' => ['required'],
             'equipments' => ['required', 'array'],
-            'equipments.*' => ['exists:equipments,id'], // use to validate that the submitted id is the same of the db table or not
+            'equipments.*' => ['exists:equipments,id'],
         ]);
 
         if ($request->hasFile('service-image')) {

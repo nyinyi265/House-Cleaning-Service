@@ -40,14 +40,6 @@
         </div>
     </section>
 
-
-
-    <section class="w-full h-[500px] bg-slate-300 mt-[5%]">
-        <div class="w-full h-full">
-            <img src="{{asset('img/Window Cleaning.jpg')}}" alt="" class="w-full h-full blur">
-        </div>
-    </section>
-
     <div class="w-[70%] mx-auto mb-[3%]">
         <div class="flex flex-col items-center p3 mt-[5%]">
             <h1 class="text-black text-4xl text-justify font-bold">Our Story</h1>
