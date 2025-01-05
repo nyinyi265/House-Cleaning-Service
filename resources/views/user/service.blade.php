@@ -137,7 +137,6 @@
                         return text.length >limit ? text.substring(0, limit) + '...' : text;
                     }
 
-                    // Loop through the services and generate HTML
                     data.forEach(service => {
                         const serviceItem = `
                         <div class="flex service-item p-4 mb-4 border-2 border-gray-300 rounded-lg">

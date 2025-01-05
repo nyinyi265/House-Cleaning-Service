@@ -30,7 +30,7 @@
                 <img src="{{asset($services->service_image)}}" alt="" width="150px" height="auto" class="rounded-s-lg">
                 <div class="flex flex-col ml-5 gap-5">
                     <h1 class="text-xl font-bold">{{$services->service_name}}</h1>
-                    <p><strong>Description: </strong>: {{$services->description}}</p>
+                    <p><strong>Description: </strong> {{$services->description}}</p>
                     <p><strong>Price</strong> {{$services->cost}}</p>
                     <div class="">
                         <label><strong>Please Choose a Date: </strong></label>
