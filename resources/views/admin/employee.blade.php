@@ -109,6 +109,7 @@
             </thead>
             <tbody>
                 @foreach ($employees as $employee)
+                @if ($employee->status === 'promoted')
                 <tr class="border-2 border-gray-400">
                     <td scope="row" class="px-6 py-3 border border-gray-400">
                         {{$employee->id}}
@@ -136,7 +137,7 @@
                             Edit
                         </a>
                     </td>
-                    <td scope="row"  class="px-6 py-3 border border-gray-400 hover:cursor-pointer">
+                    <td scope="row" class="px-6 py-3 border border-gray-400 hover:cursor-pointer">
                         <form action="/admin-employee/<?php echo $employee->id ?>" method="POST">
                             <input type="hidden" name="_method" value="DELETE">
                             <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
@@ -144,6 +145,7 @@
                         </form>
                     </td>
                 </tr>
+                @endif
                 @endforeach
             </tbody>
         </table>

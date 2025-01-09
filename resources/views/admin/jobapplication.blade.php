@@ -45,6 +45,43 @@
         </form>
     </section>
 
+    <section class="w-[70%] mx-auto my-[5%]">
+        <table id="table">
+            <thead class="text-xs text-gray-100 uppercase bg-gray-50 dark:bg-gray-700">
+                <tr class="border-2 border-white">
+                    <th scope="col" class="px-6 py-3 border border-gray-400">Name</th>
+                    <th scope="col" class="px-6 py-3 border border-gray-400">Phone Number</th>
+                    <th scope="col" class="px-6 py-3 border border-gray-400">Email</th>
+                    <th scope="col" class="px-6 py-3 border border-gray-400">Address</th>
+                    <th scope="col" class="px-6 py-3 border border-gray-400">Resume Form</th>
+                    <th scope="col" class="px-6 py-3 border border-gray-400" colspan="2">Promote</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach ($jobs as $job)
+                @if ($job->application_form > 0 && $job->status === 'applying')
+                <tr  class="border-2 border-gray-400">
+                    <td scope="row" class="px-6 py-3 border border-gray-400">{{$job->name}}</td>
+                    <td scope="row" class="px-6 py-3 border border-gray-400">{{$job->phone}}</td>
+                    <td scope="row" class="px-6 py-3 border border-gray-400">{{$job->email}}</td>
+                    <td scope="row" class="px-6 py-3 border border-gray-400">{{$job->address}}</td>
+                    <td scope="row" class="px-6 py-3 border border-gray-400">{{$job->application_form}}</td>
+                    <td scope="row" class="px-6 py-3 border border-gray-400">
+                        <a href="{{route('job-promote', $job->id)}}">
+                            Promote
+                        </a>
+                    </td>
+                    <td scope="row" class="px-6 py-3 border border-gray-400">
+                        <a href="{{route('job-reject', $job->id)}}">
+                            Reject
+                        </a>
+                    </td>
+                </tr>
+                @endif
+                @endforeach
+            </tbody>
+        </table>
+    </section>
 </body>
 
 </html>

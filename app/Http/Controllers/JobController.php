@@ -12,9 +12,10 @@ class JobController extends Controller
     //
     public function jobPost()
     {
+        $jobs = employee::all();
         $positions = position::all();
         if (auth()->user()->user_role === 'admin') {
-            return view('admin.jobapplication', compact('positions'));
+            return view('admin.jobapplication', compact('positions', 'jobs'));
         } else {
             return view('user.jobposition', compact('positions'));
         }
@@ -67,5 +68,23 @@ class JobController extends Controller
         position::where('id', $validated['position'])->decrement('job_requirements');        
 
         return redirect()->route('position')->with('success', 'Job application submitted successfully!');
+    }
+
+    public function jobPromote($id){
+        $promote = employee::findOrFail($id);
+
+        $promote->status = 'promoted';
+        $promote->save();
+
+        return redirect()->route('admin-job');
+    }
+
+    public function jobReject($id){
+        $reject = employee::findOrFail($id);
+
+        $reject->status = 'rejected';
+        $reject->save();
+
+        return redirect()->route('admin-job');
     }
 }

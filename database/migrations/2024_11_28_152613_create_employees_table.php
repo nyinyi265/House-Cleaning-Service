@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('address');
             $table->unsignedBigInteger('position_id');
             $table->string('application_form')->nullable();
+            $table->string('status')->default('applying');
             $table->foreign('position_id')->references('id')->on('positions')->onDelete('cascade')->onUpdate('cascade');
             $table->timestamps();
         });

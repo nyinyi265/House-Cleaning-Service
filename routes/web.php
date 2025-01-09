@@ -90,6 +90,8 @@ Route::middleware(['auth', 'admin'])->group(function () {
 
     Route::get('/admin/job-application', [JobController::class, 'jobPost'])->name('admin-job');
     Route::put('/admin/job-application', [JobController::class, 'jobRequirement'])->name('job-requirement');
+    Route::get('/admin/job-promote/{id}', [JobController::class, 'jobPromote'])->name('job-promote');
+    Route::get('/admin/job-reject/{id}', [JobController::class, 'jobReject'])->name('job-reject');
 });
 
 Route::middleware('auth')->group(function () {});
