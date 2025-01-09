@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('position');
             $table->decimal('salary');
+            $table->integer('job_requirements');
             $table->timestamps();
         });
     }

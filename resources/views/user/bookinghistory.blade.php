@@ -64,7 +64,7 @@
                     <div class="flex flex-col gap-3">
                         <h1 class="text-lg font-semibold">{{ $booking->service->service_name }}</h1>
                         <h1><strong>Description:</strong> {{ $booking->service->description }}</h1>
-                        <h1><strong>Price:</strong> {{ $booking->service->cost }}</h1>
+                        <h1><strong>Price:</strong> {{ $booking->service->cost }} ¥</h1>
                         <h1><strong>Booking Date:</strong> {{ $booking->date }}</h1>
                         <h1><strong class="@if ($booking->status === 'pending') text-orange-600 @endif">
                                 @if ($booking->status === 'finished')

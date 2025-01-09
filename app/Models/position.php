@@ -11,7 +11,8 @@ class position extends Model
 
     protected $fillable = [
         'position',
-        'salary'
+        'salary',
+        'job_requirements',
     ];
 
     public function employeesPositions(){
