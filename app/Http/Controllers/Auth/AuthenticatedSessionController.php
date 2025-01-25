@@ -47,12 +47,8 @@ class AuthenticatedSessionController extends Controller
             } else {
                 return redirect()->intended(RouteServiceProvider::USERHOME);
             }
-
-            // Auth::logout();
-            // return redirect('/')->with('error', 'Unauthorized Role');
         }
-
-        return back()->withErrors(['error', 'Unauthorized access']);
+        return back()->withErrors(['error' => 'The provided credentials do not match our records.']);
     }
 
     /**

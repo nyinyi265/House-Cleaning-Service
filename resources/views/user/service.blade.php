@@ -60,7 +60,7 @@
             <div class="bg-gray-100 p-4 rounded-lg mb-6">
                 <p class="text-gray-700 font-medium">{{session('booking')['service']}}</p>
                 <p class="text-gray-500 text-sm">{{session('booking')['date']}}</p>
-                <p class="text-gray-700 font-bold text-lg">{{session('booking')['price']}}</p>
+                <p class="text-gray-700 font-bold text-lg">{{session('booking')['price']}} ¥</p>
             </div>
             @endif
 
@@ -75,10 +75,10 @@
 
     <section class="relative w-full h-[600px] bg-slate-400">
         <div class="absolute top-0 left-0 w-full h-full">
-            <img src="{{asset('img/service.png')}}" alt="" class="relative w-full h-full object-cover blur-sm">
+            <img src="{{asset('img/service.png')}}" alt="" class="relative w-full h-full object-cover">
         </div>
 
-        <div class="absolute top-[50%] left-[23%] transform -translate-x-[40%] -translate-y-1/2 bg-black bg-opacity-30 p-6 rounded-md z-10">
+        <div class="absolute top-[50%] left-[45%] transform -translate-x-[40%] -translate-y-1/2 bg-black bg-opacity-40 p-6 rounded-md z-10">
             <h1 class="text-white text-2xl font-bold text-center">Your Partner for a Cleaner Tomorrow</h1>
             <h3 class="text-white text-1.5xl mt-2">Your partner in keeping a home you’re proud to live in, every day, every season</h3>
         </div>
@@ -131,7 +131,7 @@
                 .then(response => response.json()) // Fix missing parentheses
                 .then(data => {
                     const serviceList = document.getElementById('service-list');
-                    serviceList.innerHTML = ''; 
+                    serviceList.innerHTML = '';
 
                     function truncateText (text, limit){
                         return text.length >limit ? text.substring(0, limit) + '...' : text;

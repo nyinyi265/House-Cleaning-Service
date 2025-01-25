@@ -33,3 +33,4 @@
 "Event Preparation/Cleaning","Pre-event setup or post-event cleanup to ensure venues are ready or cleaned after events.","¥5,000–¥12,000","Special Cleaning","Trash bags, cleaning supplies, floor buffers, mops, brooms"
 "Crime Scene/Trauma Cleanup","Professional cleaning and sanitization of crime or trauma scenes.","¥30,000–¥60,000","Special Cleaning","Biohazard disposal bags, protective clothing, cleaning chemicals, gloves"
 "Hoarding Cleanup","Specialized cleaning for homes affected by hoarding, including waste removal and sanitizing.","¥10,000–¥30,000","Special Cleaning","Gloves, industrial trash bags, sanitizing chemicals, vacuum cleaners"
+

@@ -61,13 +61,11 @@
         font-weight: bold;
     }
 </style>
-<!-- bg-white dark:bg-gray-800 border-b border-gray-100 dark:border-gray-700 -->
 <nav x-data='{ "open": false }' class="bg-[#FBF9F1]">
-    <!-- Primary Navigation Menu -->
+
     <div class="px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between h-16">
             <div class="flex">
-                <!-- Logo -->
                 <div class="shrink-0 flex items-center logo">
                     <a href="{{ route('dashboard') }}">
                         <img src="{{asset('img/logo.png')}}" alt="" width="70px" height="70px">
@@ -76,14 +74,10 @@
                 </div>
 
                 <div class="p-2 search">
-                    <input type="text" id="search" name="search" placeholder="Search...">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
-                        <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
-                    </svg>
                 </div>
 
                 <!-- Navigation Links -->
-                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex navlink">
+                <div class="space-x-8 sm:-my-px sm:ml-10 sm:flex navlink">
                     <a href="{{route('dashboard')}}" class="home">Home</a>
                     <a href="{{route('service')}}">Service</a>
                     <a href="{{route('aboutus')}}">About Us</a>
@@ -93,7 +87,7 @@
             </div>
 
             <!-- Settings Dropdown -->
-            <div class="hidden sm:flex sm:items-center sm:ms-6">
+            <div class="sm:flex sm:items-center sm:ms-6">
 
                 <div class="flex h-[50px] justify-center items-center mt-[5px] mr-[20px] p-2 rounded-lg">
                     <a href="{{route('booking-history')}}">

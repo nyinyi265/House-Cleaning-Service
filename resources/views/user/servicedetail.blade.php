@@ -27,16 +27,16 @@
             <input type="hidden" name="serviceid" id="serviceid" value="{{$services->id}}">
 
             <div class="flex">
-                <img src="{{asset($services->service_image)}}" alt="" width="150px" height="auto" class="rounded-s-lg">
+                <img src="{{asset($services->service_image)}}" alt="" width="250px" height="auto" class="rounded-s-lg">
                 <div class="flex flex-col ml-5 gap-5">
                     <h1 class="text-xl font-bold">{{$services->service_name}}</h1>
                     <p><strong>Description: </strong> {{$services->description}}</p>
-                    <p><strong>Price</strong> {{$services->cost}}</p>
+                    <p><strong>Price</strong> {{$services->cost}} ¥</p>
                     <div class="">
                         <label><strong>Please Choose a Date: </strong></label>
                         <input type="date" name="book_date" id="book_date" required />
                     </div>
-                    <button type="submit" class="text-white text-center font-bold bg-blue-600 hover:bg-blue-300 hover:text-black py-2 px-4 rounded-lg">Book</button>
+                    <button type="submit" class="w-[150px] self-end text-white text-center font-bold bg-blue-600 hover:bg-blue-300 hover:text-black py-2 px-4 rounded-lg">Book</button>
                 </div>
             </div>
         </form>

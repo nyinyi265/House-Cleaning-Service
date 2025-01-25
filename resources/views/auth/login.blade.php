@@ -33,7 +33,7 @@
         padding: 0px 5px 0 5px;
     }
 
-    .password{
+    .password {
         margin-top: 20px;
     }
 
@@ -73,8 +73,8 @@
         height: 100%;
     }
 
-    
-    .rm-container{
+
+    .rm-container {
         display: flex;
         align-items: center;
         justify-content: flex-start;
@@ -112,6 +112,10 @@
         /* Ensure it stays behind the content */
     }
 
+    .mt-2 {
+        color: red;
+        font-size: 15px;
+    }
 </style>
 
 <div class="login-container">
@@ -128,14 +132,14 @@
             <div class="input">
                 <label for="email">Email</label><br>
                 <input type="email" name="email" id="email" required>
-                <x-input-error :messages="$errors->get('email')" class="mt-2" />
             </div>
 
             <div class="input password">
                 <label for="password">Password</label><br>
                 <input type="password" name="password" id="password" required>
-                <x-input-error :messages="$errors->get('password')" class="mt-2" />
             </div>
+            
+            <x-input-error :messages="$errors->get('error')" class="mt-2" />
 
             <div class="block mt-4 rm-container">
                 <label for="remember_me" class="inline-flex items-center">

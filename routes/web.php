@@ -58,9 +58,6 @@ Route::middleware(['auth', 'verified'])->group(function () {
 
     Route::post('/contac-tus', [ContactController::class, 'store'])->name('feedback');
 
-    Route::get('/positions', [JobController::class, 'jobPost'])->name('position');
-    Route::post('/job-application', [JobController::class, 'jobApplication'])->name('job-application');
-
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
@@ -87,11 +84,6 @@ Route::middleware(['auth', 'admin'])->group(function () {
 
     Route::get('/admin-user', [AdminController::class, 'displayUser'])->name('admin-user');
     Route::post('/admin-user', [AdminController::class, 'storeAdmin'])->name('admin-user-store');
-
-    Route::get('/admin/job-application', [JobController::class, 'jobPost'])->name('admin-job');
-    Route::put('/admin/job-application', [JobController::class, 'jobRequirement'])->name('job-requirement');
-    Route::get('/admin/job-promote/{id}', [JobController::class, 'jobPromote'])->name('job-promote');
-    Route::get('/admin/job-reject/{id}', [JobController::class, 'jobReject'])->name('job-reject');
 });
 
 Route::middleware('auth')->group(function () {});

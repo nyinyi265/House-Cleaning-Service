@@ -16,80 +16,18 @@
     <!-- Scripts -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 
-    <style>
-        .slider-container {
-            display: flex;
-            overflow-x: auto;
-            scroll-snap-type: x mandatory;
-            -webkit-overflow-scrolling: touch;
-            width: 100%;
-        }
-
-        .slider-item {
-            flex: none;
-            scroll-snap-align: center;
-            width: 40%;
-            margin: 10px;
-            background-color: antiquewhite;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            border-radius: 10px;
-            flex-wrap: wrap;
-            padding: 10px;
-            color: black;
-        }
-
-        /* .card-container {
-            perspective: 1000px;
-        }
-
-        .card {
-            position: relative;
-            transform-style: preserve-3d;
-            transition: transform 1.2s;
-        }
-
-        .card:hover {
-            transform: rotateY(180deg);
-        }
-
-        .card-front,
-        .card-back {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            backface-visibility: hidden;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 8px;
-        }
-
-        .card-front {
-            background-color: #3498db;
-            color: white;
-        }
-
-        .card-back {
-            background-color: #2ecc71;
-            color: white;
-            transform: rotateY(180deg);
-        } */
-    </style>
 </head>
 
 <body class="font-sans ">
     <div class="min-h-screen">
         @include('layouts.navigation')
 
-        <!-- Page Heading -->
-        @if (isset($header))
-        <header class="h-[700px] bg-white dark:bg-blue-800 shadow"> <!-- to change the background color -->
-            <div class="h-full">
-                {{ $header }}
-            </div>
-        </header>
+        @if (isset($header))    
+            <header class="bg-white dark:bg-blue-400 shadow">
+                <div class="mx-auto">
+                    {{ $header }}
+                </div>
+            </header>        
         @endif
 
         <!-- Page Content -->
@@ -99,11 +37,11 @@
                 <div class="flex w-full h-[90%] justify-evenly p-10 card-container">
                     <a href="{{route('service')}}">
                         <div class="w-[400px] h-[350px] card group relative overflow-hidden rounded-lg">
-                            <!-- Image -->
+
                             <div class="w-full h-full">
                                 <img src="{{asset('img/Regular Cleaning.jpg')}}" alt="" class="h-full w-full object-cover rounded-lg">
                             </div>
-                            <!-- Text (hidden initially, appears on hover) -->
+
                             <h1 class="absolute bottom-[-50%] left-0 right-0 text-center text-2xl font-bold text-white bg-black bg-opacity-50 py-2 transition-all duration-500 group-hover:bottom-0">
                                 Regular Cleaning
                             </h1>

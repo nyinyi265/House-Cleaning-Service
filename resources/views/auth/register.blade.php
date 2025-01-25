@@ -100,6 +100,11 @@
         z-index: -1;
         /* Ensure it stays behind the content */
     }
+
+    .custom-error{
+        color: red;
+        font-size: 15px;
+    }
 </style>
 
 <div class="register-container">
@@ -115,20 +120,20 @@
             <div class="input">
                 <label for="name">Name</label><br>
                 <input type="text" name="name" id="name" required>
-                <x-input-error :messages="$errors->get('name')" class="mt-2" />
+                <x-input-error :messages="$errors->get('name')" class="custom-error" />
             </div>
 
             <!-- Email -->
             <div class="input">
                 <label for="email">Email</label><br>
                 <input type="email" name="email" id="email" required>
-                <x-input-error :messages="$errors->get('email')" class="mt-2" />
+                <x-input-error :messages="$errors->get('email')" class="custom-error" />
             </div>
 
             <div class="input">
                 <label for="password">Password</label><br>
                 <input type="password" name="password" id="password" required>
-                <x-input-error :messages="$errors->get('password')" class="mt-2" />
+                <x-input-error :messages="$errors->get('password')" class="custom-error" />
             </div>
 
             <div class="input">

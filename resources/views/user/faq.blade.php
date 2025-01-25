@@ -100,13 +100,8 @@
             </div>
             <div class="flex">
                 <form action="{{route('contactus')}}" method="GET" class="space-x-4 mt-5">
-                    <button type="submit" class="bg-blue-700 hover:bg-blue-500 text-white font-bold py-2 px-4 rounded mr-[20px]">
+                    <button type="submit" class="w-[200px] bg-blue-700 hover:bg-blue-500 text-white font-bold py-2 px-4 rounded mr-[20px]">
                         Contact Us
-                    </button>
-                </form>
-                <form action="{{route('service')}}" class="space-x-4 mt-5">
-                    <button type="submit" class="border border-blue-800 hover:bg-blue-800 text-black hover:text-white font-bold py-2 px-4 rounded-lg ml-[10px]">
-                        Book a Service
                     </button>
                 </form>
             </div>
