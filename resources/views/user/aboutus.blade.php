@@ -33,7 +33,6 @@
             <img src="{{asset('img/Window Cleaning.jpg')}}" alt="" class="relative w-full h-full object-cover">
         </div>
 
-        <!-- Content Section (Text and Button) -->
         <div class="absolute top-[50%] left-[50%] transform -translate-x-[50%] -translate-y-1/2 bg-black bg-opacity-40 p-5 rounded-md z-10">
             <h1 class="text-white text-4xl font-bold text-center">About Crystal Clear</h1>
             <h3 class="text-white text-1xl mt-2">Bringing sparkle and shine to homes since 2022</h3>
@@ -145,20 +144,6 @@
                 </p>
             </div>
 
-        </div>
-    </div>
-
-    <hr>
-
-    <div class="flex flex-col w-full justify-center mt-[3%]">
-        <h1 class="text-4xl text-black text-center font-bold">Join Our Team</h1>
-        <p class="text-center text-lg px-[15%] mt-[1%]">
-            We're always looking for passionate individuals to join our cleaning crew. If you have a keen eye for detail and a commitment to excellence, we'd love to hear from you.
-        </p>
-        <div class="flex flex-row items-center justify-center space-x-4 mt-5">
-            <a href="{{route('position')}}" class="border-2 border-blue-700 hover:bg-blue-700 hover:text-white text-black font-bold py-2 px-4 rounded-lg ml-[10px]">
-                View Open Positions
-            </a>
         </div>
     </div>
 
