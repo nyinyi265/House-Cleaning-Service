@@ -109,7 +109,6 @@
             </thead>
             <tbody>
                 @foreach ($employees as $employee)
-                @if ($employee->status === 'promoted')
                 <tr class="border-2 border-gray-400">
                     <td scope="row" class="px-6 py-3 border border-gray-400">
                         {{$employee->id}}
@@ -145,7 +144,6 @@
                         </form>
                     </td>
                 </tr>
-                @endif
                 @endforeach
             </tbody>
         </table>

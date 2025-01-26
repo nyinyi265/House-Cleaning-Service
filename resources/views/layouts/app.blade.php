@@ -22,12 +22,12 @@
     <div class="min-h-screen">
         @include('layouts.navigation')
 
-        @if (isset($header))    
+        @if (isset($header))
             <header class="bg-white dark:bg-blue-400 shadow">
                 <div class="mx-auto">
                     {{ $header }}
                 </div>
-            </header>        
+            </header>
         @endif
 
         <!-- Page Content -->

@@ -34,6 +34,7 @@
 
     @if (Auth::user()->email == 'yoonme26@gmail.com')
     <section class="w-[50%] p-10 border-2 border-slate-400 mx-auto mt-[4%] rounded-lg">
+        <h1 class="text-xl font-bold mb-[3%]">Assign Admin</h1>
         <form action="{{route('admin-user-store')}}" method="POST" class="flex flex-col">
             @csrf
 
