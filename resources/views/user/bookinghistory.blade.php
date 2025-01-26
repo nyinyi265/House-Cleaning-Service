@@ -18,12 +18,12 @@
 <body>
     @include('layouts.navigation')
 
-    @if (session('cancel'))
+    @if(session('cancel'))
     <div id="feedback-popup" class="fixed inset-0 bg-blue-100 bg-opacity-50 flex items-center justify-center z-50">
         <div class="flex flex-col bg-white p-6 rounded-lg shadow-lg items-center">
-            <h2 class="text-lg font-bold text-red-600">Booking Cancel</h2>
+            <h2 class="text-lg font-bold text-red-600">Booking Cancel!</h2>
 
-            <p class="text-red-700">{{ session('feedback') }}</p>
+            <p class="text-red-700">{{ session('cancel') }}</p>
             <button id="close-feedback" class="font-semibold mt-4 px-4 py-2 bg-blue-400 text-neutral-700 rounded hover:bg-blue-600 hover:text-white">
                 Close
             </button>
@@ -98,7 +98,7 @@
                         </form>
                         @endif
                     </div>
-                    <div class="text-gray-600 font-semibold 
+                    <div class="text-gray-600 font-semibold
                 @if ($booking->status == 'finished') text-green-600 bg-green-100 p-2 rounded-md @endif
                 @if ($booking->status == 'scheduled') text-blue-500 bg-blue-100 p-2 rounded-md @endif
                 @if ($booking->status == 'pending') text-orange-500 bg-orange-100 p-2 rounded-md @endif

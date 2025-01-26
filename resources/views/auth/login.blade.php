@@ -73,7 +73,6 @@
         height: 100%;
     }
 
-
     .rm-container {
         display: flex;
         align-items: center;
@@ -107,9 +106,7 @@
         background: url('{{ asset("img/register.jpg") }}') no-repeat center center;
         background-size: cover;
         filter: blur(8px);
-        /* Apply blur effect to the image */
         z-index: -1;
-        /* Ensure it stays behind the content */
     }
 
     .mt-2 {
@@ -138,7 +135,7 @@
                 <label for="password">Password</label><br>
                 <input type="password" name="password" id="password" required>
             </div>
-            
+
             <x-input-error :messages="$errors->get('error')" class="mt-2" />
 
             <div class="block mt-4 rm-container">
