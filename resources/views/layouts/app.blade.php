@@ -50,11 +50,9 @@
 
                     <a href="{{route('service')}}">
                         <div class="w-[400px] h-[350px] card group relative overflow-hidden rounded-lg">
-                            <!-- Image -->
                             <div class="w-full h-full">
                                 <img src="{{asset('img/Deep Cleaning.jpg')}}" alt="" class="h-full w-full object-cover rounded-lg">
                             </div>
-                            <!-- Text (hidden initially, appears on hover) -->
                             <h1 class="absolute bottom-[-50%] left-0 right-0 text-center text-2xl font-bold text-white bg-black bg-opacity-50 py-2 transition-all duration-500 group-hover:bottom-0">
                                 Deep Cleaning
                             </h1>
