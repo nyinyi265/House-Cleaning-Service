@@ -122,8 +122,6 @@
         showCategory("{{$faqCategories[0]['id']}}");
     </script>
 
-
-
 </body>
 
 </html>

@@ -3,7 +3,6 @@
         width: 900px;
         height: auto;
         margin: 0 auto;
-        /* background-color: grey; */
         padding: 30px;
         display: flex;
     }
