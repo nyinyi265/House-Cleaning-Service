@@ -12,8 +12,6 @@
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
 
-
-    <!-- Scripts -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
@@ -21,12 +19,10 @@
     @include('layouts.navigation')
 
     <section class="h-[500px] relative mb-[5%]">
-        <!-- Background Image -->
         <div class="absolute top-0 left-0 w-full h-full bg-blue-400">
             <img src="{{asset('img/faq.jpeg')}}" alt="" class="relative w-full h-full object-cover blur-sm">
         </div>
 
-        <!-- Content Section (Text and Button) -->
         <div class="absolute top-[50%] left-[50%] transform -translate-x-[50%] -translate-y-1/2 bg-black bg-opacity-50 p-5 rounded-md z-10">
             <h1 class="text-white text-3xl font-bold text-center">Frequently Asked Questions</h1>
             <h3 class="text-white text-xl mt-2">Find answers to common questions about our house keeping services!</h3>
@@ -123,7 +119,6 @@
             answerElement.classList.toggle('hidden');
         }
 
-        // Show the first category by default
         showCategory("{{$faqCategories[0]['id']}}");
     </script>
 
