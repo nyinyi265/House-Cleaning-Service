@@ -25,44 +25,49 @@
 
     <!-- Scripts -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
-    <link rel="stylesheet" href="{{asset('js/DataTable.css')}}">
+    <link rel="stylesheet" href="{{ asset('js/DataTable.css') }}">
 </head>
 
 <body>
     @include('admin.layouts.navigation')
 
     @if (session('success'))
-    {{session('success')}}
+        {{ session('success') }}
     @endif
 
     <section class="w-[50%] p-10 border-2 border-slate-400 mx-auto mt-[4%] rounded-lg">
         <h1 class="text-xl font-bold mb-[3%]">Add New Services</h1>
-        <form action="{{isset($serviceEdit)? route('admin-service.update', $serviceEdit->id) : route('admin-service.store')}}" method="POST" enctype="multipart/form-data" class="flex flex-col">
+        <form
+            action="{{ isset($serviceEdit) ? route('admin-service.update', $serviceEdit->id) : route('admin-service.store') }}"
+            method="POST" enctype="multipart/form-data" class="flex flex-col">
             @csrf
             @if (isset($serviceEdit))
-            {{method_field('PUT')}}
+                {{ method_field('PUT') }}
             @endif
 
             <div class="flex flex-col gap-3">
                 <label for="service-name">Service Name</label>
-                <input type="text" name="service-name" id="service-name" class="px-4 rounded-lg" value="{{isset($serviceEdit)? $serviceEdit->service_name : ''}}" required>
+                <input type="text" name="service-name" id="service-name" class="px-4 rounded-lg"
+                    value="{{ isset($serviceEdit) ? $serviceEdit->service_name : '' }}" required>
             </div>
 
             <div class="flex flex-col gap-3">
                 <label for="service-description">Service Description</label>
-                <textarea name="service-description" id="service-description" class="px-4 rounded-lg" required>{{isset($serviceEdit)? $serviceEdit->description : ''}}</textarea>
+                <textarea name="service-description" id="service-description" class="px-4 rounded-lg" required>{{ isset($serviceEdit) ? $serviceEdit->description : '' }}</textarea>
             </div>
 
             <div class="flex flex-col gap-3">
                 <label for="service-cost">Service Cost</label>
-                <input type="number" name="service-cost" id="service-cost" class="px-4 rounded-lg" value="{{isset($serviceEdit)? $serviceEdit->cost: ''}}" required>
+                <input type="number" name="service-cost" id="service-cost" class="px-4 rounded-lg"
+                    value="{{ isset($serviceEdit) ? $serviceEdit->cost : '' }}" required>
             </div>
 
             <div class="flex flex-col gap-3">
                 <label for="service-image">Select an Image</label>
-                <input type="file" name="service-image" id="service-image" class="border-2 border-slate-400 px-4 py-2 rounded-lg" required>
+                <input type="file" name="service-image" id="service-image"
+                    class="border-2 border-slate-400 px-4 py-2 rounded-lg" required>
                 @if (isset($serviceEdit) && $serviceEdit->service_image)
-                <img src="{{asset($serviceEdit->service_image)}}" alt="" width="50px" height="50px">
+                    <img src="{{ asset($serviceEdit->service_image) }}" alt="" width="50px" height="50px">
                 @endif
             </div>
 
@@ -70,7 +75,9 @@
                 <label>Choose a Category</label>
                 <select name="service-category" id="service-category" class="rounded-lg" required>
                     @foreach ($categories as $category)
-                    <option value="{{$category->id}}" {{isset($serviceEdit) && $serviceEdit->category_id === $category->id ? 'selected' : ''}}>{{$category->category}}</option>
+                        <option value="{{ $category->id }}"
+                            {{ isset($serviceEdit) && $serviceEdit->category_id === $category->id ? 'selected' : '' }}>
+                            {{ $category->category }}</option>
                     @endforeach
                 </select>
             </div>
@@ -92,19 +99,18 @@
                 </div>
                 <div class="w-[50%] mt-[30px]">
                     @foreach ($equipments as $item)
-                    <div class="equipment-items" data-category="{{strtolower($item->equipment_category)}}" class="w-full">
-                        <input type="checkbox" name="equipments[]" value="{{ $item->id }}"
-                            @if (isset($serviceEdit) && in_array($item->id, $serviceEdit->needEquipmentForServices->pluck('id')->toArray()))
-                        checked
-                        @endif>
-                        <label for="">{{$item->equipment_name}}</label>
-                    </div>
+                        <div class="equipment-items" data-category="{{ strtolower($item->equipment_category) }}"
+                            class="w-full">
+                            <input type="checkbox" name="equipments[]" value="{{ $item->id }}"
+                                @if (isset($serviceEdit) && in_array($item->id, $serviceEdit->needEquipmentForServices->pluck('id')->toArray())) checked @endif>
+                            <label for="">{{ $item->equipment_name }}</label>
+                        </div>
                     @endforeach
                 </div>
             </div>
 
             <button type="submit" class="border-2 border-slate-400 mt-[3%] py-2 rounded-lg">
-                {{isset($serviceEdit)? 'Update Service' : 'Add Service'}}
+                {{ isset($serviceEdit) ? 'Update Service' : 'Add Service' }}
             </button>
         </form>
     </section>
@@ -141,38 +147,43 @@
             </thead>
             <tbody>
                 @foreach ($services as $service)
-                <tr class="border-2 border-white">
-                    <td scope="row" class="border border-gray-400 px-4 py-2">
-                        {{$service->id}}
-                    </td>
-                    <td scope="row" class="border border-gray-400 px-4 py-2">
-                        {{$service->service_name}}
-                    </td>
-                    <td scope="row" class="border border-gray-400 px-4 py-2">
-                        {{$service->description}}
-                    </td>
-                    <td scope="row" class="border border-gray-400 px-4 py-2">
-                        {{$service->cost}}
-                    </td>
-                    <td scope="row" class="border border-gray-400 px-4 py-2">
-                        {{$service->category->category}}
-                    </td>
-                    <td scope="row" class="flex border border-gray-400 px-4 py-2 justify-center">
-                        <img src="{{asset($service->service_image)}}" alt="" width="50px" height="50px">
-                    </td>
-                    <td scope="row" class="border border-gray-400 px-4 py-2">
-                        <a href="{{route('admin-service.edit', $service->id)}}">
-                            Edit
-                        </a>
-                    </td>
-                    <td scope="row" class="border border-gray-400 px-4 py-2">
-                        <form action="/admin-service/<?php echo $service->id; ?>" method="POST">
-                            <input type="hidden" name="_method" value="DELETE">
-                            <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
-                            <input type="submit" value="Delete" class="cursor-pointer">
-                        </form>
-                    </td>
-                </tr>
+                    <tr class="border-2 border-white">
+                        <td scope="row" class="border border-gray-400 px-4 py-2">
+                            {{ $service->id }}
+                        </td>
+                        <td scope="row" class="border border-gray-400 px-4 py-2">
+                            {{ $service->service_name }}
+                        </td>
+                        <td scope="row" class="border border-gray-400 px-4 py-2">
+                            {{ $service->description }}
+                        </td>
+                        <td scope="row" class="border border-gray-400 px-4 py-2">
+                            {{ $service->cost }}
+                        </td>
+                        <td scope="row" class="border border-gray-400 px-4 py-2">
+                            {{ $service->category->category }}
+                        </td>
+                        <td scope="row" class="flex border border-gray-400 px-4 py-2 justify-center">
+                            <img src="{{ asset($service->service_image) }}" alt="" width="50px"
+                                height="50px">
+                        </td>
+                        <td scope="row" class="border border-gray-400 px-4 py-2">
+                            <a href="{{ route('admin-service.edit', $service->id) }}"
+                                class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 cursor-pointer inline-block text-center">
+                                Edit
+                            </a>
+                        </td>
+                        <td scope="row" class="border border-gray-400 px-4 py-2">
+                            <form action="/admin-service/<?php echo $service->id; ?>" method="POST"
+                                onsubmit="return confirm('Are you sure you want to delete this service?');">
+                                <input type="hidden" name="_method" value="DELETE">
+                                <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
+                                <input type="submit" value="Delete"
+                                    class="bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600 cursor-pointer">
+                            </form>
+                        </td>
+
+                    </tr>
                 @endforeach
             </tbody>
         </table>
@@ -196,7 +207,7 @@
 
         filterEquipment();
     </script>
-    <script src="{{asset('js/DataTable.js')}}"></script>
+    <script src="{{ asset('js/DataTable.js') }}"></script>
 </body>
 
 </html>

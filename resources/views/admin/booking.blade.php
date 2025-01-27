@@ -80,7 +80,7 @@
                         <form action="{{route('booking-delete', $booking->id)}}" method="POST">
                             <input type="hidden" name="_method" value="DELETE">
                             <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
-                            <input type="submit" value="Delete" class="text-red-500 font-semibold cursor-pointer">
+                            <input type="submit" value="Delete" class="bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600 cursor-pointer">
                         </form>
                     </td>
                 </tr>
@@ -139,7 +139,7 @@
                     <td class="border border-gray-400 px-4 py-2">
                         <form action="{{route('change-status', $booking->id)}}" method="POST">
                             <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
-                            <input type="submit" value="Done" class="text-green-500 font-semibold cursor-pointer">
+                            <input type="submit" value="Done" class="bg-green-500 text-white px-4 py-2 rounded-lg hover:bg-green-600 cursor-pointer">
                         </form>
                     </td>
                 </tr>

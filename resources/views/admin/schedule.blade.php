@@ -131,7 +131,7 @@
                         @endforeach
                     </td>
                     <td class="border border-gray-400 px-4 py-2">
-                        <a href="{{route('schedule-edit', $schedule->id)}}" class="hover:text-gray-400">
+                        <a href="{{route('schedule-edit', $schedule->id)}}" class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 cursor-pointer inline-block text-center">
                             Edit
                         </a>
                     </td>
@@ -139,7 +139,7 @@
                         <form action="{{route('delete-schedule', $schedule->id)}}" method="POST">
                             <input type="hidden" name="_method" value="DELETE">
                             <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
-                            <input type="submit" value="Delete Schedule" class="cursor-pointer hover:text-gray-400">
+                            <input type="submit" value="Delete Schedule" class="bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600 cursor-pointer">
                         </form>
                     </td>
                 </tr>

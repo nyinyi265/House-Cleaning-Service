@@ -132,7 +132,7 @@
                         {{$employee->position ? $employee->position->salary : 'No salary'}}
                     </td>
                     <td scope="row" class="px-6 py-3 border border-gray-400">
-                        <a href="{{route('admin-employee.edit', $employee->id)}}">
+                        <a href="{{route('admin-employee.edit', $employee->id)}}" class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600 cursor-pointer inline-block text-center">
                             Edit
                         </a>
                     </td>
@@ -140,7 +140,7 @@
                         <form action="/admin-employee/<?php echo $employee->id ?>" method="POST">
                             <input type="hidden" name="_method" value="DELETE">
                             <input type="hidden" name="_token" value="<?php echo csrf_token(); ?>">
-                            <input type="submit" value="Remove Employee">
+                            <input type="submit" value="Remove Employee" class="bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600 cursor-pointer">
                         </form>
                     </td>
                 </tr>

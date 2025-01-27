@@ -15,7 +15,6 @@ class employee extends Model
         'email',
         'address',
         'position_id',
-        'application_form'
     ];
 
     public function position()  {
