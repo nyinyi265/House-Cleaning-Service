@@ -117,7 +117,7 @@
                         Serive ID
                     </th>
                     <th scope="col" class="px-6 py-3 border border-gray-400">
-                        Serive Name
+                        Serivce Name
                     </th>
                     <th scope="col" class="px-6 py-3 border border-gray-400">
                         Serive Description
