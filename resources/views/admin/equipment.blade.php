@@ -90,7 +90,7 @@
         </form>
     </section>
 
-    <section class="w-[50%] mx-[250px] my-[5%] dataTables_length">
+    <section class="w-[65%] mx-[250px] my-[5%] dataTables_length">
         <table id="table" class="cell-border compact stripe">
             <thead class="text-sm text-gray-100 uppercase bg-gray-50 dark:bg-gray-700">
                 <tr class="border-2 border-white">
@@ -119,7 +119,7 @@
             </thead>
             <tbody>
                 @foreach ($equipments as $equipment)
-                    <tr class="border-2 border-white">
+                    <tr class="border-2 border-gray-400">
                         <td scope="row" class="border border-gray-400 px-4 py-2">
                             {{ $equipment->id }}
                         </td>
@@ -154,6 +154,7 @@
             </tbody>
         </table>
     </section>
+    <script src="{{ asset('js/DataTable.js') }}"></script>
 </body>
 
 </html>
