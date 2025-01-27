@@ -70,7 +70,7 @@
                     <td class="border border-gray-400 px-4 py-2">
                         {{$booking->service->service_name ?? 'N/A'}}
                     </td>
-                    <td class="border border-gray-400 px-4 py-2">
+                    <td class="border border-gray-400 px-4 py-2 text-green-600 font-bold">
                         {{$booking->status}}
                     </td>
                     <td class="border border-gray-400 px-4 py-2">
@@ -130,7 +130,7 @@
                     <td class="border border-gray-400 px-4 py-2">
                         {{$booking->service->service_name ?? 'N/A'}}
                     </td>
-                    <td class="border border-gray-400 px-4 py-2">
+                    <td class="border border-gray-400 px-4 py-2 text-blue-600 font-bold">
                         {{$booking->status}}
                     </td>
                     <td class="border border-gray-400 px-4 py-2">
@@ -186,7 +186,7 @@
                     <td class="border border-gray-400 px-4 py-2">
                         {{$booking->service->service_name ?? 'N/A'}}
                     </td>
-                    <td class="border border-gray-400 px-4 py-2">
+                    <td class="border border-gray-400 px-4 py-2 text-red-600 font-bold">
                         {{$booking->status}}
                     </td>
                     <td class="border border-gray-400 px-4 py-2">
@@ -236,7 +236,7 @@
                     <td class="border border-gray-400 px-4 py-2">
                         {{$booking->service->service_name ?? 'N/A'}}
                     </td>
-                    <td class="border border-gray-400 px-4 py-2">
+                    <td class="border border-gray-400 px-4 py-2 text-orange-600 font-bold">
                         {{$booking->status}}
                     </td>
                     <td class="border border-gray-400 px-4 py-2">
