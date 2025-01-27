@@ -114,22 +114,22 @@
             <thead class="text-xs text-gray-100 uppercase bg-gray-50 dark:bg-gray-700">
                 <tr class="border-2 border-white">
                     <th scope="col" class="px-6 py-3 border border-gray-400">
-                        Serive ID
+                        Serivce ID
                     </th>
                     <th scope="col" class="px-6 py-3 border border-gray-400">
                         Serivce Name
                     </th>
                     <th scope="col" class="px-6 py-3 border border-gray-400">
-                        Serive Description
+                        Serivce Description
                     </th>
                     <th scope="col" class="px-6 py-3 border border-gray-400">
-                        Serive Cost
+                        Serivce Cost
                     </th>
                     <th scope="col" class="px-6 py-3 border border-gray-400">
-                        Serive Category
+                        Serivce Category
                     </th>
                     <th scope="col" class="px-6 py-3 border border-gray-400">
-                        Serive Image
+                        Serivce Image
                     </th>
                     <th scope="col" class="px-6 py-3 border border-gray-400">
                         Edit
