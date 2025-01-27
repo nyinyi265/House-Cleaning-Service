@@ -3,30 +3,6 @@
         color: black;
     }
 
-    .search {
-        width: 200px;
-        display: flex;
-        opacity: 100%;
-        position: relative;
-        margin: 0 150px;
-    }
-
-    .search input {
-        width: 100%;
-        height: 30px;
-        margin: 0 auto;
-        border-radius: 10px;
-        align-self: center;
-        padding: 0 15px;
-    }
-
-    .search svg {
-        position: absolute;
-        right: 10px;
-        top: 37%;
-        transform: translate(-60%);
-    }
-
     .service {
         margin-left: 15px;
     }
@@ -62,18 +38,14 @@
     }
 </style>
 <nav x-data='{ "open": false }' class="bg-[#FBF9F1]">
-
     <div class="px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between h-16">
             <div class="flex">
-                <div class="shrink-0 flex items-center logo">
+                <div class="shrink-0 flex items-center mr-[450px] logo">
                     <a href="{{ route('dashboard') }}">
                         <img src="{{asset('img/logo.png')}}" alt="" width="70px" height="70px">
                         <h1>Crystal Clear</h1>
                     </a>
-                </div>
-
-                <div class="p-2 search">
                 </div>
 
                 <!-- Navigation Links -->

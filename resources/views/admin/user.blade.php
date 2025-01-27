@@ -26,48 +26,52 @@
 
     <!-- Scripts -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
-    <link rel="stylesheet" href="{{asset('js/DataTable.css')}}">
+    <link rel="stylesheet" href="{{ asset('js/DataTable.css') }}">
 </head>
 
 <body>
     @include('admin.layouts.navigation')
 
-    @if (Auth::user()->email == 'yoonme26@gmail.com')
-    <section class="w-[50%] p-10 border-2 border-slate-400 mx-auto mt-[4%] rounded-lg">
-        <h1 class="text-xl font-bold mb-[3%]">Assign Admin</h1>
-        <form action="{{route('admin-user-store')}}" method="POST" class="flex flex-col">
-            @csrf
+    @if (Auth::user()->where('user_role', 'admin')->count() < 5)
+        @if (Auth::user()->email == 'yoonme26@gmail.com')
+            <section class="w-[50%] p-10 border-2 border-slate-400 mx-auto mt-[4%] rounded-lg">
+                <h1 class="text-xl font-bold mb-[3%]">Assign Admin</h1>
+                <form action="{{ route('admin-user-store') }}" method="POST" class="flex flex-col">
+                    @csrf
 
-            <div class="flex flex-col gap-3">
-                <label for="user-name">Admin Name</label>
-                <input type="text" name="admin-name" id="admin-name" class="px-4 rounded-lg" required>
-            </div>
+                    <div class="flex flex-col gap-3">
+                        <label for="user-name">Admin Name</label>
+                        <input type="text" name="admin-name" id="admin-name" class="px-4 rounded-lg" required>
+                    </div>
 
-            <div class="flex flex-col gap-3">
-                <label for="user-email">Admin Email</label>
-                <input type="email" name="admin-email" id="admin-email" class="px-4 rounded-lg" required>
-            </div>
+                    <div class="flex flex-col gap-3">
+                        <label for="user-email">Admin Email</label>
+                        <input type="email" name="admin-email" id="admin-email" class="px-4 rounded-lg" required>
+                    </div>
 
-            <div class="flex flex-col gap-3">
-                <label for="user-password">Admin Password</label>
-                <input type="password" name="admin-password" id="admin-password" class="px-4 rounded-lg" required>
-            </div>
+                    <div class="flex flex-col gap-3">
+                        <label for="user-password">Admin Password</label>
+                        <input type="password" name="admin-password" id="admin-password" class="px-4 rounded-lg"
+                            required>
+                    </div>
 
-            <div class="flex flex-col gap-3">
-                <label for="phone-number">Phone Number</label>
-                <input type="text" name="phone-number" id="phone-number" class="px-4 rounded-lg" required>
-            </div>
+                    <div class="flex flex-col gap-3">
+                        <label for="phone-number">Phone Number</label>
+                        <input type="text" name="phone-number" id="phone-number" class="px-4 rounded-lg" required>
+                    </div>
 
-            <div class="flex flex-col gap-3">
-                <label for="user-address">Admin Address</label>
-                <input type="text" name="admin-address" id="admin-address" class="px-4 rounded-lg" required>
-            </div>
+                    <div class="flex flex-col gap-3">
+                        <label for="user-address">Admin Address</label>
+                        <input type="text" name="admin-address" id="admin-address" class="px-4 rounded-lg" required>
+                    </div>
 
-            <div class="flex flex-col gap-3">
-                <button type="submit"  class="border-2 border-slate-400 mt-[3%] py-2 rounded-lg">Add Admin</button>
-            </div>
-        </form>
-    </section>
+                    <div class="flex flex-col gap-3">
+                        <button type="submit" class="border-2 border-slate-400 mt-[3%] py-2 rounded-lg">Add
+                            Admin</button>
+                    </div>
+                </form>
+            </section>
+        @endif
     @endif
 
     <section class="w-[95%] p-10 mx-auto mt-[4%] rounded-lg">
@@ -77,7 +81,6 @@
                     <th scope="col" class="px-6 py-3 border border-gray-400">User ID</th>
                     <th scope="col" class="px-6 py-3 border border-gray-400">User Name</th>
                     <th scope="col" class="px-6 py-3 border border-gray-400">User Email</th>
-                    <th scope="col" class="px-6 py-3 border border-gray-400">User Password</th>
                     <th scope="col" class="px-6 py-3 border border-gray-400">Phone Number</th>
                     <th scope="col" class="px-6 py-3 border border-gray-400">User Address</th>
                     <th scope="col" class="px-6 py-3 border border-gray-400">User Role</th>
@@ -85,20 +88,19 @@
             </thead>
             <tbody>
                 @foreach ($users as $user)
-                <tr class="border-2 border-gray-400">
-                    <td class="border border-gray-400 px-4 py-2">{{$user->id}}</td>
-                    <td class="border border-gray-400 px-4 py-2">{{$user->name}}</td>
-                    <td class="border border-gray-400 px-4 py-2">{{$user->email}}</td>
-                    <td class="border border-gray-400 px-4 py-2">{{$user->password}}</td>
-                    <td class="border border-gray-400 px-4 py-2">{{$user->phone}}</td>
-                    <td class="border border-gray-400 px-4 py-2">{{$user->address}}</td>
-                    <td class="border border-gray-400 px-4 py-2">{{$user->user_role}}</td>
-                </tr>
+                    <tr class="border-2 border-gray-400">
+                        <td class="border border-gray-400 px-4 py-2">{{ $user->id }}</td>
+                        <td class="border border-gray-400 px-4 py-2">{{ $user->name }}</td>
+                        <td class="border border-gray-400 px-4 py-2">{{ $user->email }}</td>
+                        <td class="border border-gray-400 px-4 py-2">{{ $user->phone }}</td>
+                        <td class="border border-gray-400 px-4 py-2">{{ $user->address }}</td>
+                        <td class="border border-gray-400 px-4 py-2">{{ $user->user_role }}</td>
+                    </tr>
                 @endforeach
             </tbody>
         </table>
     </section>
-    <script src="{{asset('js/DataTable.js')}}"></script>
+    <script src="{{ asset('js/DataTable.js') }}"></script>
 </body>
 
 </html>
