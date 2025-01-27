@@ -12,7 +12,6 @@
     <link rel="preconnect" href="https://fonts.bunny.net">
     <link href="https://fonts.bunny.net/css?family=figtree:400,500,600&display=swap" rel="stylesheet" />
 
-
     <!-- Scripts -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     <style>
@@ -27,6 +26,40 @@
 
             to {
                 opacity: 1;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .flex-section {
+                flex-direction: column;
+            }
+
+            .sticky-sidebar {
+                position: relative;
+                width: 100%;
+                top: 0;
+            }
+
+            .service-list {
+                width: 100%;
+            }
+
+            .service-item {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            .service-item img {
+                margin-right: 0;
+                margin-bottom: 1rem;
+            }
+
+            .hero-text {
+                left: 50%;
+                transform: translateX(-50%);
+                text-align: center;
+                width: 90%;
             }
         }
     </style>
@@ -78,19 +111,19 @@
             <img src="{{asset('img/service.png')}}" alt="" class="relative w-full h-full object-cover">
         </div>
 
-        <div class="absolute top-[50%] left-[45%] transform -translate-x-[40%] -translate-y-1/2 bg-black bg-opacity-40 p-6 rounded-md z-10">
+        <div class="absolute top-[50%] left-[45%] transform -translate-x-[40%] -translate-y-1/2 bg-black bg-opacity-40 p-6 rounded-md z-10 hero-text">
             <h1 class="text-white text-2xl font-bold text-center">Your Partner for a Cleaner Tomorrow</h1>
             <h3 class="text-white text-1.5xl mt-2">Your partner in keeping a home you’re proud to live in, every day, every season</h3>
         </div>
     </section>
 
-    <section class="w-[70%] mx-auto my-[3%]">
+    <section class="w-[90%] mx-auto my-[3%]">
         <h1 class="text-center text-2xl font-bold">Welcome to Crystal Clear</h1>
         <p class="text-center text-lg">At Crystal Clear, we specialize in creating clean, comfortable, and welcoming spaces tailored to your needs. Whether it’s routine cleaning, deep cleaning, or personalized housekeeping services, our skilled team ensures every detail is handled with care. Using eco-friendly products and the latest techniques, we deliver spotless results that leave your home or office fresh and inviting. Relax and let us take the stress out of cleaning, so you can focus on what matters most.</p>
     </section>
 
-    <section class="flex w-full rounded-lg p-8 mx-auto">
-        <div class="flex flex-col w-[30%] h-full bg-slate-100 py-10 px-4 sticky top-0">
+    <section class="flex flex-section w-full rounded-lg p-8 mx-auto">
+        <div class="flex flex-col w-[30%] h-full bg-slate-100 py-10 px-4 sticky top-0 sticky-sidebar">
             <h1 class="mb-4 text-2xl font-bold">Choose A Categories</h1>
             @foreach ($categories as $category)
             <button onclick="fetchServices('{{ $category->id }}')" class="mb-4 bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-500">
@@ -99,7 +132,7 @@
             @endforeach
         </div>
 
-        <div id="service-list" class="w-[70%] p-4 rounded-lg">
+        <div id="service-list" class="w-[70%] p-4 rounded-lg service-list">
             @foreach ($services as $service)
             <div class="flex service-item p-4 mb-4 border-2 border-gray-300 rounded-lg">
                 <img src="{{asset( $service->service_image)}}" alt="" width="200px" class="mr-8 rounded-s-lg">
@@ -127,13 +160,13 @@
         function fetchServices(categoryId) {
             console.log('Service Categories: ', categoryId);
             fetch(`/service/${categoryId}`)
-                .then(response => response.json()) // Fix missing parentheses
+                .then(response => response.json())
                 .then(data => {
                     const serviceList = document.getElementById('service-list');
                     serviceList.innerHTML = '';
 
-                    function truncateText (text, limit){
-                        return text.length >limit ? text.substring(0, limit) + '...' : text;
+                    function truncateText(text, limit) {
+                        return text.length > limit ? text.substring(0, limit) + '...' : text;
                     }
 
                     data.forEach(service => {
@@ -151,7 +184,7 @@
                         </div>
                     `;
 
-                        serviceList.innerHTML += serviceItem; // Append to the service list
+                        serviceList.innerHTML += serviceItem;
                     });
                 })
                 .catch(error => console.error('Error fetching services:', error));

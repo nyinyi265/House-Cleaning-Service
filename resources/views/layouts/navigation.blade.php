@@ -36,12 +36,40 @@
         font-size: larger;
         font-weight: bold;
     }
+
+    @media (max-width: 768px) {
+        .navlink {
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            margin-left: 0;
+        }
+
+        .navlink a {
+            margin: 10px 0;
+        }
+
+        .hamburger {
+            display: block;
+        }
+
+        .hamburger div {
+            width: 25px;
+            height: 3px;
+            background-color: black;
+            margin: 4px 0;
+        }
+
+        .nav-links.active {
+            display: flex;
+        }
+    }
 </style>
 <nav x-data='{ "open": false }' class="bg-[#FBF9F1]">
     <div class="px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between h-16">
-            <div class="flex">
-                <div class="shrink-0 flex items-center mr-[450px] logo">
+            <div class="flex items-center">
+                <div class="shrink-0 flex items-center mr-[200px] logo">
                     <a href="{{ route('dashboard') }}">
                         <img src="{{asset('img/logo.png')}}" alt="" width="70px" height="70px">
                         <h1>Crystal Clear</h1>
@@ -49,7 +77,7 @@
                 </div>
 
                 <!-- Navigation Links -->
-                <div class="space-x-8 sm:-my-px sm:ml-10 sm:flex navlink">
+                <div class="hidden sm:flex sm:space-x-8 sm:ml-10 navlink" id="navLinks">
                     <a href="{{route('dashboard')}}" class="home">Home</a>
                     <a href="{{route('service')}}">Service</a>
                     <a href="{{route('aboutus')}}">About Us</a>
@@ -59,8 +87,7 @@
             </div>
 
             <!-- Settings Dropdown -->
-            <div class="sm:flex sm:items-center sm:ms-6">
-
+            <div class="hidden sm:flex sm:items-center sm:ms-6">
                 <div class="flex h-[50px] justify-center items-center mt-[5px] mr-[20px] p-2 rounded-lg">
                     <a href="{{route('booking-history')}}">
                         <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-journal-check" viewBox="0 0 16 16">
@@ -141,6 +168,18 @@
             <x-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                 {{ __('Dashboard') }}
             </x-responsive-nav-link>
+            <x-responsive-nav-link :href="route('service')" :active="request()->routeIs('service')">
+                {{ __('Service') }}
+            </x-responsive-nav-link>
+            <x-responsive-nav-link :href="route('aboutus')" :active="request()->routeIs('aboutus')">
+                {{ __('About Us') }}
+            </x-responsive-nav-link>
+            <x-responsive-nav-link :href="route('contactus')" :active="request()->routeIs('contactus')">
+                {{ __('Contact Us') }}
+            </x-responsive-nav-link>
+            <x-responsive-nav-link :href="route('faq')" :active="request()->routeIs('faq')">
+                {{ __('FAQ') }}
+            </x-responsive-nav-link>
         </div>
 
         <!-- Responsive Settings Options -->
@@ -181,3 +220,10 @@
         </div>
     </div>
 </nav>
+
+<script>
+    function toggleNav() {
+        var navLinks = document.getElementById("navLinks");
+        navLinks.classList.toggle("active");
+    }
+</script>
