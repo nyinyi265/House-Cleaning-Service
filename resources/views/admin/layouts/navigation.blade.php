@@ -49,6 +49,7 @@
                     <a href="{{route('admin-employee')}}" class="home">Employee</a>
                     <a href="{{route('admin-schedule')}}">Schedule</a>
                     <a href="{{route('admin-booking')}}">Booking</a>
+                    <a href="{{route('admin-equipment')}}">Equipment</a>
                     <a href="{{route('admin-user')}}">User</a>
                     <a href="{{route('admin-feedback')}}">Feedback</a>
                 </div>

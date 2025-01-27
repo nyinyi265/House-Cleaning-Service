@@ -84,6 +84,12 @@ Route::middleware(['auth', 'admin'])->group(function () {
 
     Route::get('/admin-user', [AdminController::class, 'displayUser'])->name('admin-user');
     Route::post('/admin-user', [AdminController::class, 'storeAdmin'])->name('admin-user-store');
+
+    Route::get('/admin-equipment', [AdminEquipmentContoller::class, 'index'])->name('admin-equipment');
+    Route::post('/admin-equipment-store', [AdminEquipmentContoller::class, 'store'])->name('equipment-store');
+    Route::get('/admin-equipment-edit/{id}', [AdminEquipmentContoller::class, 'edit'])->name('equipment-edit');
+    Route::put('/admin-equipment-update/{id}', [AdminEquipmentContoller::class, 'update'])->name('equipment-upd');
+    Route::delete('/admin-equipment-delete/{id}', [AdminEquipmentContoller::class, 'destroy'])->name('equipment-delete');
 });
 
 Route::middleware('auth')->group(function () {});
