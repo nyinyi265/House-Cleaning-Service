@@ -66,7 +66,6 @@ class AdminServiceController extends Controller
             $service->needEquipmentForServices()->attach($validated['equipments']);
         }
         return redirect()->route('admin-service');
-        // return response()->json(['message' => 'Service created successfully.']);
     }
 
     /**
@@ -96,10 +95,8 @@ class AdminServiceController extends Controller
     {
         $serviceUpd = service::find($id);
     
-        // Detach all previously associated equipments
         $serviceUpd->needEquipmentForServices()->detach();
     
-        // Validate the request
         $validated = $request->validate([
             'service-name' => ['required', 'string'],
             'service-description' => ['required', 'string'],
@@ -115,7 +112,6 @@ class AdminServiceController extends Controller
             $request->file('service-image')->move(public_path('uploads'), basename($imagePath));
         }
 
-        // Update the service with the new data
         $serviceUpd->update([
             'service_name' => $validated['service-name'],
             'description' => $validated['service-description'],
@@ -124,7 +120,6 @@ class AdminServiceController extends Controller
             'category_id' => $validated['service-category']
         ]);
     
-        // Attach the new selected equipments
         $serviceUpd->needEquipmentForServices()->attach($validated['equipments']);
     
         return redirect()->route('admin-service')->with('success', 'Service updated successfully!');

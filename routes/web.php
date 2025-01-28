@@ -18,7 +18,6 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\ServiceDetailController;
 use App\Http\Controllers\UserServiceController;
-use App\Http\Controllers\JobController;
 
 /*
 |--------------------------------------------------------------------------

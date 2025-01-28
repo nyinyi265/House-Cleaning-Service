@@ -25,10 +25,6 @@ class service extends Model
         return $this->belongsToMany(equipment::class, 'required_equipments', 'service_id', 'equipment_id')->using(requiredEquipment::class)->withPivot('quantity')->withTimestamps();
     }
 
-    public function serviceGotPromotions(){
-        return $this->belongsToMany(promotion::class, 'promotion_services', 'service_id', 'promotion_id');
-    }
-
     public function category(){
         return $this->belongsTo(ServiceCategory::class);
     }

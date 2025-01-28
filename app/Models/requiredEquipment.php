@@ -10,7 +10,7 @@ class requiredEquipment extends Pivot
 {
     use HasFactory;
 
-    protected $table = 'required_equipments'; // Explicitly set it to the plural form if needed
+    protected $table = 'required_equipments';
 
     protected $fillable = ['quantity'];
 

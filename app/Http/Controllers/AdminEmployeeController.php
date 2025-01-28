@@ -70,7 +70,7 @@ class AdminEmployeeController extends Controller
         $positions = position::all();
         $employees = employee::with('position')->get();
         $empEdit = employee::find($id);
-        return view('admin.employee', compact('positions', 'employees', 'empEdit')); 
+        return view('admin.employee', compact('positions', 'employees', 'empEdit'));
     }
 
     /**
