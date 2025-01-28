@@ -6,7 +6,6 @@ use App\Http\Controllers\AdminEmployeeController;
 use App\Http\Controllers\AdminEquipmentContoller;
 use App\Http\Controllers\AdminHomeController;
 use App\Http\Controllers\AdminScheduleController;
-use App\Http\Controllers\AdminServiceCategoryController;
 use App\Http\Controllers\AdminServiceController;
 use App\Http\Controllers\BookingController;
 use App\Http\Controllers\ContactController;
