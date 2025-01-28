@@ -30,14 +30,6 @@ use App\Http\Controllers\UserServiceController;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
-
-// Route::get('/dashboard', function () {
-//     return view('dashboard');
-// })->name('dashboard');
-
 Route::get('/', [HomeController::class, 'index'])->name('dashboard');
 Route::get('/service', [ServiceController::class, 'index'])->name('service');
 Route::get('/contact-us', [ContactController::class, 'index'])->name('contactus');
