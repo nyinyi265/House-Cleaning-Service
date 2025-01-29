@@ -400,5 +400,5 @@ class EquipmentSeeder extends Seeder
                 'condition_status' => 'good'
             ],
         ]);
-    }   
+    }
 }
